@@ -21,7 +21,8 @@ pygmentscodefencesguesssyntax = true
     # Blog subtitle which appears below blog title. Supports markdown.
     subtitle = "Postdoctoral associate @ [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
 
-    # description = "A website built through Hugo and blogdown."
+    # Content types which are excludes Disqus comments.
+    disableDisqusTypes = ["page"]
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.12.0"
