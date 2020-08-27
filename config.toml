@@ -12,14 +12,29 @@ copyright = "© Jian Cui"
     post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+name = "Home"
+url = "/"
+weight = 1
+
 [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/rstudio/blogdown"
+name = "Home"
+url = "/"
+weight = 1
+
 [[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/rstudio"
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
 
 [params]
     subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
