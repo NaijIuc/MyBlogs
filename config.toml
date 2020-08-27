@@ -4,7 +4,7 @@ title = "Jian Cui Ph.D."
 theme = "ezhil"
 googleAnalytics = "UA-123-45"
 
-copyright = "© Copyright noticed by Jian.c"
+copyright = "© Copyright noticed by Jian.C"
 
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -67,15 +67,21 @@ weight = 4
 
 # Social media links which shows up on site header.
 # Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
+
+[[params.social]]
+name = "Email"
+icon = "mail"
+url = "mailto:cuij@pitt.edu"
+
 [[params.social]]
 name = "Github"
 icon = "github"
-url = "https://github.com/vividvilla/ezhil"
+url = "https://github.com/NaijIuc"
 
 [[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/gohugoio"
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/jian-cui-61ab121b0/"
 
 # Enable tags.
 [taxonomies]
