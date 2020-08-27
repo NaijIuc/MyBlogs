@@ -12,7 +12,7 @@ copyright = "© Jian Cui"
     post = "/:year/:month/:day/:slug/"
 
 [params]
-    subtitle = "postdoctoral Associate @  [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
+    subtitle = "Postdoctoral Associate @  [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	
