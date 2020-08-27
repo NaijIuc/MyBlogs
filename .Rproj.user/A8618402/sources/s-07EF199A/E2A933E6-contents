@@ -60,3 +60,12 @@ name = "Tags"
 url = "/tags"
 weight = 4
 
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/vividvilla/ezhil"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
