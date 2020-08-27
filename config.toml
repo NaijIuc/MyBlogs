@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Ezhil"
-theme = "ezhil"
+theme = "solar-theme-hugo"
 paginate = 5
 
 copyright = "© Copyright notice"
