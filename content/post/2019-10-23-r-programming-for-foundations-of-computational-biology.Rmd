@@ -76,7 +76,7 @@ An R package bundles together code, data, documentation, and tests, and is easy 
 
 There are 104 build-in datasets in R, and can be loaded with data()
 
-```{r, eval=FALSE}
+```r
 head(data()$results[,c(3,4)])
 data("CO2")
 head(CO2, 3)
