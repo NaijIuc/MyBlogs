@@ -1,14 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Solar Theme</title>
+    <title>Ezhil</title>
     <link>/</link>
-    <description>Recent content on Solar Theme</description>
+    <description>Recent content on Ezhil</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 18 Mar 2018 12:13:38 +0530</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 19 Apr 2019 21:37:58 +0530</pubDate>
+      
+      <guid>/about/</guid>
+      <description>This is some static page where you can write about yourself.</description>
+    </item>
+    
+    <item>
+      <title>How to test dark mode?</title>
+      <link>/posts/post-7/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate>
+      
+      <guid>/posts/post-7/</guid>
+      <description>You can set dark mode as default by setting params.mode to dark in config.toml or set it to auto which will detect based on your OS and switch to dark mode.</description>
+    </item>
+    
+    <item>
+      <title>Typography</title>
+      <link>/posts/post-5/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate>
+      
+      <guid>/posts/post-5/</guid>
+      <description>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad.</description>
+    </item>
+    
+    <item>
+      <title>Hugo shortcodes</title>
+      <link>/posts/post-6/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:36 +0530</pubDate>
+      
+      <guid>/posts/post-6/</guid>
+      <description>Images   Dave Herring     Dave Herring   Github Gist  Youtube video   Tweet Hugo 0.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Traveling Ultralight</title>
+      <link>/posts/post-4/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:35 +0530</pubDate>
+      
+      <guid>/posts/post-4/</guid>
+      <description>I’m on a trip at the moment, and a friend who generously let me sleep on his couch looked at my small travel backpack and commented on how little I travel with: “That’s impressive,” he said.</description>
+    </item>
+    
+    <item>
+      <title>How I Learned to Stop Procrastinating, &amp; Love Letting Go</title>
+      <link>/posts/post-3/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:32 +0530</pubDate>
+      
+      <guid>/posts/post-3/</guid>
+      <description>The end of procrastination is the art of letting go.
+I’ve been a lifelong procrastinator, at least until recent years. I would put things off until deadline, because I knew I could come through.</description>
+    </item>
+    
+    <item>
+      <title>Fearlessness: How to Stop Running from Space</title>
+      <link>/posts/post-2/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:30 +0530</pubDate>
+      
+      <guid>/posts/post-2/</guid>
+      <description>We spend our days filling in every available space, cramming in more tasks, responding to messages, checking social media and online sites, watching videos.</description>
+    </item>
+    
+    <item>
+      <title>Primer: When You Have Too Much to Do</title>
+      <link>/posts/post-1/</link>
+      <pubDate>Sun, 18 Mar 2018 02:01:58 +0530</pubDate>
+      
+      <guid>/posts/post-1/</guid>
+      <description>You have a to-do list that scrolls on for days. You are managing multiple projects, getting lots of email and messages on different messaging systems, managing finances and personal health habits and so much more.</description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>
@@ -16,9 +91,7 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</description>
     </item>
     
   </channel>
