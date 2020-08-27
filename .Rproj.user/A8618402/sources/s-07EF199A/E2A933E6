@@ -1,0 +1,24 @@
+{
+    "id": "E2A933E6",
+    "path": "~/MyGit/MyBlogs/config.toml",
+    "project_path": "config.toml",
+    "type": "toml",
+    "hash": "4193165219",
+    "contents": "",
+    "dirty": false,
+    "created": 1598496344892.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "2,23",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1598496528,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1598496528032,
+    "read_only": false,
+    "read_only_alternatives": []
+}
