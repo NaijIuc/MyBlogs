@@ -146,12 +146,9 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
 </ul>
 <h2 id="datasets">Datasets</h2>
 <p>There are 104 build-in datasets in R, and can be loaded with data()</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">head</span>(<span style="color:#268bd2">data</span>()<span style="color:#719e07">$</span>results[,<span style="color:#268bd2">c</span>(<span style="color:#2aa198">3</span>,<span style="color:#2aa198">4</span>)])
-<span style="color:#268bd2">data</span>(<span style="color:#2aa198">&#34;CO2&#34;</span>)
-<span style="color:#268bd2">head</span>(CO2, <span style="color:#2aa198">3</span>)
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">head</span>(<span style="color:#268bd2">data</span>()$results[,<span style="color:#268bd2">c</span>(<span style="color:#2aa198">3</span>,<span style="color:#2aa198">4</span>)])
-<span style="color:#268bd2">data</span>(<span style="color:#2aa198">&#34;CO2&#34;</span>)
-<span style="color:#268bd2">head</span>(CO2, <span style="color:#2aa198">3</span>)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">head(data()$results[,c(3,4)])
+data(&#34;CO2&#34;)
+head(CO2, 3)
 </code></pre></div><h2 id="type-of-data">Type of data</h2>
 <ul>
 <li>character: &ldquo;a&rdquo;, &ldquo;swc&rdquo;</li>
@@ -161,7 +158,7 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
 <li>complex: 1+4i (complex numbers with real and imaginary parts)</li>
 </ul>
 <p>&ldquo;&lt;-&rdquo; and &ldquo;=&rdquo; can be used to assign values. &ldquo;&lt;-&rdquo; is for the global environment, and &ldquo;=&rdquo; is for local. Try code below:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">mean</span>(x <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">10</span>); x; <span style="color:#268bd2">mean</span>(x <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">10</span>); x
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mean(x = 1:10); x; mean(x &lt;- 1:10); x
 </code></pre></div><h2 id="data-structures">Data structures</h2>
 <ul>
 <li><strong>vector</strong>, the most common and basic data structure in R;</li>
