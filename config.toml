@@ -4,7 +4,7 @@ title = "Jian Cui Ph.D."
 theme = "ezhil"
 googleAnalytics = "UA-123-45"
 
-copyright = "© Copyright notice by Jian.c"
+copyright = "© Copyright noticed by Jian.c"
 
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -31,6 +31,10 @@ pygmentscodefencesguesssyntax = true
 
     MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
     MathJaxVersion = "2.7.5"
+    
+    # Switch to dark mode or auto detect mode from OS (Optional).
+    # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
+    mode = "dark" # "dark" or "auto"
 
     # path to the favicon, under "static"
     favicon = "favicon.ico"
