@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Jian Cui</copyright>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R programming for Foundations of Computational Biology</title>
+      <link>/2019/10/23/r-programming-for-foundations-of-computational-biology/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology/</guid>
+      <description>IntroductionAdvances:Very well maintained communities and detailed manuals.
+The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
+Bioconductor, tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development.
+Introductional documents: http://cran.</description>
+    </item>
     
     <item>
       <title>A Plain Markdown Post</title>
