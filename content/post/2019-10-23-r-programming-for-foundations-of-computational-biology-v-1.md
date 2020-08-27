@@ -8,7 +8,6 @@ categories:
 tags:
   - R
 ---
-\newpage
 
 This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
 
@@ -59,7 +58,7 @@ An integrated development environment (IDE) for R(python), including **Source**,
 
 1. Files, Plots, Packages, Help, Viewer.
 
-\newpage
+
 # R basic
 
 ## Get help
@@ -279,7 +278,7 @@ dev.off()
 1. Manage read/write files in subdirectory, and use "dir.create()";
 1. Managing r image file (.RData) makes your work more efficient.
 
-\newpage
+
 # R advance
 
 ## Apply functions
@@ -410,7 +409,7 @@ First Header  | Second Header
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 ```
-\newpage
+
 # Homework
 
 *Arabidopsis* is a commonly used model organism. There is a preliminary result of the sequencing analysis of *Arabidopsis thaliana*, and please conduct further analysis associating the questions.
