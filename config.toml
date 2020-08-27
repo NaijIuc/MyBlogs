@@ -1,58 +1,42 @@
-baseURL = "http://example.org/"
+baseurl = "/"
 languageCode = "en-us"
-title = "Ezhil"
+title = "A Hugo website"
 theme = "ezhil"
-paginate = 5
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-copyright = "© Copyright notice"
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
 
-pygmentsstyle = "solarized-dark"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-googleAnalytics = "UA-123-45"
-disqusShortname = "ezhil-demo"
-
-summaryLength = 20
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/rstudio/blogdown"
+[[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/rstudio"
 
 [params]
-	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
-	disableDisqusTypes = ["page"]
-	featherIconsCDN = true
-	mode = "auto" # "dark", "auto", "light"
-	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
-	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
-	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
+    description = "A website built through Hugo and blogdown."
 
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.12.0"
+    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
 
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 2
+    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    MathJaxVersion = "2.7.5"
 
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 3
+    # path to the favicon, under "static"
+    favicon = "favicon.ico"
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"
 
-[[params.social]]
-name = "Github"
-icon = "github"
-url = "https://github.com/vividvilla/ezhil"
-
-[[params.social]]
-name = "RSS"
-icon = "rss"
-url = "/index.xml"
-
-[taxonomies]
-   tag = "tags"
