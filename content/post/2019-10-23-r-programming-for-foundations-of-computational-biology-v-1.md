@@ -7,7 +7,6 @@ categories:
   - Teaching
 tags:
   - R
-type: "page"
 ---
 
 This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
