@@ -69,3 +69,6 @@ url = "https://github.com/vividvilla/ezhil"
 name = "RSS"
 icon = "rss"
 url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
