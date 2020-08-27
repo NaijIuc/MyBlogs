@@ -304,16 +304,16 @@ system.time(for (i in c(1:length(d[, 1]))) {
     d$mean1[i] &lt;- mean(c(d[i, 1], d[i, 2]))
 })</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.41    0.03    0.43</code></pre>
+##    0.40    0.03    0.44</code></pre>
 <pre class="r"><code>system.time(d$mean2 &lt;- apply(d, 1, mean))</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.04    0.00    0.04</code></pre>
+##    0.04    0.00    0.05</code></pre>
 <pre class="r"><code>library(parallel)
 numCores &lt;- detectCores()
 cl &lt;- makeCluster(numCores)
 system.time(d$mean3 &lt;- parApply(cl,d,1, mean))</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.03    0.00    0.03</code></pre>
+##    0.03    0.00    0.05</code></pre>
 <pre class="r"><code>stopCluster(cl)</code></pre>
 </div>
 <div id="intro-to-ggplot2" class="section level2">
