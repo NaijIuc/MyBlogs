@@ -27,7 +27,7 @@ copyright = "© Jian Cui"
     MathJaxVersion = "2.7.5"
 
     # path to the favicon, under "static"
-    favicon = "favicon.ico"
+    favicon = "jcicon.ico"
 
     [params.logo]
     url = "logo.png"
