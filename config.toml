@@ -12,7 +12,7 @@ copyright = "© Jian Cui"
     post = "/:year/:month/:day/:slug/"
 
 [params]
-    subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
+    subtitle = "postdoctoral Associate @  [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	
@@ -63,12 +63,17 @@ weight = 4
 [[params.social]]
 name = "Github"
 icon = "github"
-url = "https://github.com/vividvilla/ezhil"
+url = "https://github.com/NaijIuc"
 
 [[params.social]]
-name = "RSS"
-icon = "rss"
-url = "/index.xml"
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/jian-cui-61ab121b0/"
+
+[[params.social]]
+name = "Email"
+icon = "mail"
+url = "mailto:cuij@pitt.edu"
 
 [taxonomies]
    tag = "tags"

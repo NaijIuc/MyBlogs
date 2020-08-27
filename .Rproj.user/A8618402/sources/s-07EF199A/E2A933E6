@@ -3,22 +3,22 @@
     "path": "~/MyGit/MyBlogs/config.toml",
     "project_path": "config.toml",
     "type": "toml",
-    "hash": "2126194441",
+    "hash": "3575773882",
     "contents": "",
     "dirty": false,
     "created": 1598496344892.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
-        "cursorPosition": "49,12",
-        "scrollLine": "33"
+        "cursorPosition": "74,13",
+        "scrollLine": "38"
     },
     "folds": "",
-    "lastKnownWriteTime": 1598497041,
+    "lastKnownWriteTime": 1598497474,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1598497041849,
+    "last_content_update": 1598497474789,
     "read_only": false,
     "read_only_alternatives": []
 }
