@@ -1,0 +1,444 @@
+---
+title: R programming for Foundations of Computational Biology V.1
+author: Jian.C
+date: '2019-10-23'
+slug: r-programming-for-foundations-of-computational-biology-v-1
+categories:
+  - Teaching
+tags:
+  - R
+---
+\newpage
+# Introduction
+
+
+
+## Advances:
+
++ Very well maintained communities and detailed manuals.
+ 
+    - [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
+
+    - [Bioconductor](https://www.bioconductor.org/), tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development. 
+
+    - Introductional documents: http://cran.r-project.org/other-docs.html
+
++ For most time in using R, you barely do not need to program, due to the increasing number of *package*s, so you can find almost every method/algorithm in R.
+
++ Excellent plotting function
+
+```{r}
+demo(graphics)
+```
+
++ Rstudio
+
+## Weakness:
+
++ R is **slower**, than like Julia, Python, etc
++ Lack of proper coding standard, indentation
++ Not friendly to the non-English environment
++ The quality of packages is not guaranteed
+
+# Rstudio
+
+An integrated development environment (IDE) for R(python), including **Source**, **Console**, **Environment, History, Connections**, and **Files, Plots, Packages, Help, Viewer**.
+
+1. Source, code writing, new file, and run code;
+
+1. Console, execution code, and test;
+
+1. Environment, History, *Connections*;
+
+    + Environment: to record the variable values
+
+    + History: the record of code execution
+
+1. Files, Plots, Packages, Help, Viewer.
+
+\newpage
+# R basic
+
+## Get help
+
+- "?topic" for local package or function
+- apropos("keyword") full name of a function
+
+## pacakges
+
+An R package bundles together code, data, documentation, and tests, and is easy to share with others
+
+- install.packages()/ remove.pacakges()
+- [*BiocManager::install()*](https://www.bioconductor.org/install/)
+- library()/ detach()
+
+## Datasets
+
+There are 104 build-in datasets in R, and can be loaded with data()
+
+```{r}
+head(data()$results[,c(3,4)])
+data("CO2")
+head(CO2, 3)
+```
+
+## Type of data
+
+- character: "a", "swc"
+- numeric: 2, 15.5
+- integer: 2L (the L tells R to store this as an integer)
+- logical: TRUE, FALSE
+- complex: 1+4i (complex numbers with real and imaginary parts)
+
+"<-" and "=" can be used to assign values. "<-" is for the global environment, and "=" is for local. Try code below: 
+
+```{r,eval=FALSE}
+mean(x = 1:10); x; mean(x <- 1:10); x
+```
+
+## Data structures
+
+- **vector**, the most common and basic data structure in R;
+- **factors**, variables take on a limited number of different values, often referred to as categorical variables;
+- **data frame**, a very important data type in R for most tabular data;
+- **matrix**, matrices are an extension of the numeric or character vectors;
+- **list**, a container.
+
+Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames).
+To check the types or structures of data, "class()" can be employed.
+
+
+```{r,eval=FALSE}
+#If there are different types of data in a vector, then it forcely forms a charactpr vector:
+a <- c(1,2,3); b <- c(1L,"apple",2+5i, logical(2))
+a; b
+
+#factor:
+c <- factor(c(1:5,1,3,5)); c
+
+# matrix
+m <- matrix(1:6, nrow = 2, ncol = 3); n <- matrix(1:6, nrow = 3, ncol = 2)
+m; n; m%*%n; n%*%m
+
+# data frame
+head(CO2)
+
+# list
+list <- list(a,b,c,CO2,m,n)
+```
+
+## Functions and loops
+
+Functions sturcture:
+
+```{r}
+myfunction <- function(arg1, arg2, ... ){
+statements
+return(object)
+}
+```
+
+Example:
+
+```{r,eval=FALSE}
+myfunct <- function(x){
+  y=x^3+x^2+x+1
+}
+x <- seq(-10,10,0.5)
+y <- myfunct(x)
+
+```
+
+for loop: 
+
+```{r}
+for (val in sequence) {
+  statement
+}
+
+# Example:
+for (i in 1:5) {
+  print(i)
+}
+```
+
+while loop:
+
+```{r}
+while (test_expression) {
+   statement
+}
+
+# Example:
+v <- c("Hello","while loop")
+cnt <- 2
+while (cnt < 7) {
+   print(v)
+   cnt = cnt + 1
+}
+```
+
+repeat loop:
+
+```{r,eval=FALSE}
+repeat { 
+   commands 
+   if(condition) {
+      break
+   }
+}
+
+# Example
+v <- c("Hello","loop")
+cnt <- 2
+repeat {
+   print(v)
+   cnt <- cnt+1
+   if(cnt > 5) {
+      break
+   }
+}
+```
+
+
+## File operations
+
+R can read files from local files, online files, and memory, with variant types. With the help of some packages, R can access the Excel file as well. E.g.
+
+```{r,eval=FALSE}
+t1 <- read.table("local file")
+t2 <- read.csv('https://data.ok.gov/sites/default/files/unspsc%20codes_3.csv')
+t3 <- readLines("clipboard")
+
+library("readxl")
+t4 <- read_excel("my_file.xls")
+```
+
+Enter data using a spreadsheet
+
+```{r}
+edit(t2)
+fix(t2)
+```
+
+Operations on data frame, like merge, subset, isolate ...(demo)
+
+Write files:
+```{r, eval= FALSE}
+sink("file.txt")
+writeLines()
+write.csv()
+write.table()
+```
+
+Save writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date.
+
+```{r,eval=FALSE}
+save.image(file = ".RData", version = NULL,...)
+```
+
+The saved files can be read by using function [load](https://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html) or [attach](https://stat.ethz.ch/R-manual/R-devel/library/base/html/attach.html) (or [data](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html) in some cases).
+
+## Simple Graphs with R
+
+
+```{r}
+t <- c(1,1,2,2,3,3,6)
+names(t) <- LETTERS[1:7]
+
+# subpanel option 1
+par(mfrow=c(3,2)) # row col
+
+# subpanel option 2
+layout ( matrix ( c (1 , 1 , 1 ,
+                     2 , 3 , 4 ,
+                     2 , 3 , 5) , nr = 3 , byrow = T) )
+
+plot(t)
+barplot(t)
+hist(t)
+pie(t)
+dotchart(t)
+boxplot(t)
+```
+
+Save images, **Export** is able to help save the plot for sure, but if you want high-quality figures, by using:
+
+```{r,eval=FALSE}
+jpeg/png/pdf('rplot.jpg/png/pdf', width = 8, height = 8, unit="in", res=300)
+plot(x,y)
+dev.off()
+```
+
+## The common workflow of R
+
+1. Create a specific working directory and set it as default by "setwd()";
+1. Manage read/write files in subdirectory, and use "dir.create()";
+1. Managing r image file (.RData) makes your work more efficient.
+
+\newpage
+# R advance
+
+## Apply functions
+
+To make a for loop more efficient, "apply()" function is introduced in R. The `apply` functions (`apply, sapply, lapply` etc.) are marginally faster than a regular for loop.
+
+```{r}
+N <- 10000
+x1 <- runif(N)
+x2 <- runif(N)
+d <- as.data.frame(cbind(x1, x2))
+
+system.time(for (i in c(1:length(d[, 1]))) {
+    d$mean1[i] <- mean(c(d[i, 1], d[i, 2]))
+})
+
+system.time(d$mean2 <- apply(d, 1, mean))
+
+library(parallel)
+numCores <- detectCores()
+cl <- makeCluster(numCores)
+system.time(d$mean3 <- parApply(cl,d,1, mean))
+stopCluster(cl)
+```
+
+## Intro to ggplot2
+
+Basic, use `qplot()` function (quick plot), designed primarily for interactive use: it makes several assumptions that speed most cases.
+
+```{r}
+data("diamonds")
+
+qplot(carat, price, data = diamonds)
+qplot(log(carat),log(price),data = diamonds)
+qplot(carat, x*y*z, data = diamonds)
+head(diamonds)
+
+dsmall <- diamonds[sample(nrow(diamonds),100),]
+qplot(carat, price, data = dsmall, col=color)
+
+# shape = cut;
+# alpha = I (transparent)
+# ...
+```
+
+Plot `geoms` (geometics)
+geom = point/ smooth/ boxplot/ path/ histogram ...
+```{r}
+qplot(color, price, data = dsmall, geom = 'boxplot', 
+      #fill = color,
+      size = 1) + geom_boxplot(outlier.color = "green",
+                                outlier.size = 10,
+                                fill = "red",
+                                col = "blue")
+
+```
+
+When designing multilayered plots with different data sources it can get in the way. This section describes what those defaults are, and how they map to the fuller `ggplot()` syntax.
+
+```{r}
+qplot(carat, price, data = dsmall, geom = c("point", "smooth"))
+ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth()
+```
+
+When the conditions get more complecated, like we want to check the carat and price relationship under different cut, or cut and color...
+```{r}
+gg <- ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+  geom_point() + labs(title="Scatterplot", x="Carat", y="Price")
+gg + facet_wrap( ~ cut, ncol=3)
+gg + facet_grid(color ~ cut) 
+```
+
+## Nicely output: [R markdown](https://rmarkdown.rstudio.com/)
+
+The combination of R and markdown, a text enriched conversion tool for the web? writers and it allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid formats (PDF, HTML, MS Word). R markdown even allows you to write academic manuscripts with a well-organized bibliography.
+
+```{r,eval=FALSE}
+install.packages("rmarkdown")
+install.packages("rticles")
+```
+```
+Text formatting 
+------------------------------------------------------------
+
+*italic*  or _italic_
+**bold**   __bold__
+`code`
+superscript^2^ and subscript~2~
+
+Headings
+------------------------------------------------------------
+
+# 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header
+
+Lists
+------------------------------------------------------------
+
+*   Bulleted list item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Numbered list item 1
+
+1.  Item 2. The numbers are incremented automatically in the output.
+
+Links and images
+------------------------------------------------------------
+
+<http://example.com>
+
+[linked phrase](http://example.com)
+
+![optional caption text](path/to/img.png)
+
+Tables 
+------------------------------------------------------------
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
+\newpage
+# Homework
+
+*Arabidopsis* is a commonly used model organism. There is a preliminary result of the sequencing analysis of *Arabidopsis thaliana*, and please conduct further analysis associating the questions.
+
+1. Please read the following data into a data frame, and get read of NA values.
+<https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/tair/DESeq2_DEG.Day1-Day0.txt>
+
+1. By applying [*org.At.tair.db*](https://bioconductor.org/packages/release/data/annotation/html/org.At.tair.db.html) package. Based on the manual, transfer the original *gene_id* into gene symbol. 
+    + You may notice some original gene ids in the have no corresponding gene symbol. This is because these genes have little biological meaning or they have not been annotated yet. Try to count the number of these ids.  
+    + Meanwhile, some original ids have more than one gene symbol due to they were named by the different research centers. Complete the gene id convert with an output like below:
+
+
+```
+           gene_id   baseMean log2FoldChange ...              sym
+         AT2G33830 1938.15972      -2.560609 ...      AtDRM2/DRM2
+         AT2G33750    9.78974     -19.989301 ...      ATPUP2/PUP2
+         AT3G54500 2238.31465       2.720430 ...             LNK2
+         AT2G46830  169.50508       3.527082 ...      AtCCA1/CCA1
+         AT1G28330 1636.02224      -1.493341 ... AtDRM1/DRM1/DYL1
+         AT1G48598   39.84136      -9.779030 ...         CPuORF31
+
+```
+
+1. Find out the top 10 significantly expressed genes by setting padj value less than 0.05.
+
+    + Generate the barplot of `baseMean` of the top 10 most significantly expressed genes that have symbol names. To make it visually compared easily, you may want to use logarithmic value, and show gene symbols instead of gene ids.
+
+    + Generate a dot plot of their `log2FoldChange` in increasing order, and show the error bar as log folder change standard error (lfcSE).
+
+1. Isolate all of the differentially expressed genes into a new data frame, and count the number of significantly up/down-regulated genes.
+
+1. Plot the relationship between `log2FoldChange` and -log(`padj`), with highlighting the significantlly up/down-regulated genes in the figure (Volcano plot).
+
+Please complete above tasks and generate a report with R markdown, and show all the code you written in chuncks.
