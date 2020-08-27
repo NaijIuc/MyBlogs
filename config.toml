@@ -1,44 +1,28 @@
-baseurl = "/"
+baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Jian Cui Ph.D."
+title = "Ezhil"
 theme = "ezhil"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+paginate = 5
 
-copyright = "© Jian Cui"
+copyright = "© Copyright notice"
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
+pygmentsstyle = "solarized-dark"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-123-45"
+disqusShortname = "ezhil-demo"
+
+summaryLength = 20
 
 [params]
-    subtitle = "Postdoctoral Associate @  [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
+	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
-	
 	mode = "auto" # "dark", "auto", "light"
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.12.0"
-    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    MathJaxVersion = "2.7.5"
-
-    # path to the favicon, under "static"
-    favicon = "jcicon.ico"
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
 
 [[menu.main]]
 name = "Home"
@@ -47,7 +31,7 @@ weight = 1
 
 [[menu.main]]
 name = "All posts"
-url = "/post"
+url = "/posts"
 weight = 2
 
 [[menu.main]]
@@ -63,17 +47,12 @@ weight = 4
 [[params.social]]
 name = "Github"
 icon = "github"
-url = "https://github.com/NaijIuc"
+url = "https://github.com/vividvilla/ezhil"
 
 [[params.social]]
-name = "LinkedIn"
-icon = "linkedin"
-url = "https://www.linkedin.com/in/jian-cui-61ab121b0/"
-
-[[params.social]]
-name = "Email"
-icon = "mail"
-url = "mailto:cuij@pitt.edu"
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
 
 [taxonomies]
    tag = "tags"

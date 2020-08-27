@@ -1,50 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Jian Cui Ph.D.</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Jian Cui Ph.D.</description>
+    <title>Posts on Ezhil</title>
+    <link>http://example.org/post/</link>
+    <description>Recent content in Posts on Ezhil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Jian Cui</copyright>
-    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>R programming for Foundations of Computational Biology</title>
-      <link>/2019/10/23/r-programming-for-foundations-of-computational-biology/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology/</guid>
-      <description>IntroductionAdvances:Very well maintained communities and detailed manuals.
-The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
-Bioconductor, tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development.
-Introductional documents: http://cran.</description>
-    </item>
     
     <item>
-      <title>R programming for Foundations of Computational Biology V1</title>
-      <link>/2019/10/23/r-programming-for-foundations-of-computational-biology-v1/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      <title>Hello R Markdown</title>
+      <link>http://example.org/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology-v1/</guid>
-      <description>\newpage
-Introduction Advances:   Very well maintained communities and detailed manuals.
-  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
-  Bioconductor, tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development.
-  Introductional documents: http://cran.</description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>/2018/03/18/typography/</link>
-      <pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate>
-      
-      <guid>/2018/03/18/typography/</guid>
-      <description>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.
-Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio.</description>
+      <guid>http://example.org/post/2015-07-23-r-rmarkdown/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</description>
     </item>
     
   </channel>
