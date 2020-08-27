@@ -1,0 +1,379 @@
+---
+title: test
+author: Jian Cui
+date: '2020-08-27'
+slug: test
+categories:
+  - R
+tags: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div style="page-break-after: always;"></div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<div id="advances" class="section level2">
+<h2>Advances:</h2>
+<ul>
+<li><p>Very well maintained communities and detailed manuals.</p>
+<ul>
+<li><p><a href="https://cran.r-project.org/">The Comprehensive R Archive Network (CRAN)</a>, a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</p></li>
+<li><p><a href="https://www.bioconductor.org/">Bioconductor</a>, tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development.</p></li>
+<li><p>Introductional documents: <a href="http://cran.r-project.org/other-docs.html" class="uri">http://cran.r-project.org/other-docs.html</a></p></li>
+</ul></li>
+<li><p>For most time in using R, you barely do not need to program, due to the increasing number of <em>package</em>s, so you can find almost every method/algorithm in R.</p></li>
+<li><p>Excellent plotting function</p></li>
+</ul>
+<pre class="r"><code>demo(graphics)</code></pre>
+<ul>
+<li>Rstudio</li>
+</ul>
+</div>
+<div id="weakness" class="section level2">
+<h2>Weakness:</h2>
+<ul>
+<li>R is <strong>slower</strong>, than like Julia, Python, etc</li>
+<li>Lack of proper coding standard, indentation</li>
+<li>Not friendly to the non-English environment</li>
+<li>The quality of packages is not guaranteed</li>
+</ul>
+</div>
+</div>
+<div id="rstudio" class="section level1">
+<h1>Rstudio</h1>
+<p>An integrated development environment (IDE) for R(python), including <strong>Source</strong>, <strong>Console</strong>, <strong>Environment, History, Connections</strong>, and <strong>Files, Plots, Packages, Help, Viewer</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Source, code writing, new file, and run code;</p></li>
+<li><p>Console, execution code, and test;</p></li>
+<li><p>Environment, History, <em>Connections</em>;</p>
+<ul>
+<li><p>Environment: to record the variable values</p></li>
+<li><p>History: the record of code execution</p></li>
+</ul></li>
+<li><p>Files, Plots, Packages, Help, Viewer.</p></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="r-basic" class="section level1">
+<h1>R basic</h1>
+<div id="get-help" class="section level2">
+<h2>Get help</h2>
+<ul>
+<li>“?topic” for local package or function</li>
+<li>apropos(“keyword”) full name of a function</li>
+</ul>
+</div>
+<div id="pacakges" class="section level2">
+<h2>pacakges</h2>
+<p>An R package bundles together code, data, documentation, and tests, and is easy to share with others</p>
+<ul>
+<li>install.packages()/ remove.pacakges()</li>
+<li><a href="https://www.bioconductor.org/install/"><em>BiocManager::install()</em></a></li>
+<li>library()/ detach()</li>
+</ul>
+</div>
+<div id="datasets" class="section level2">
+<h2>Datasets</h2>
+<p>There are 104 build-in datasets in R, and can be loaded with data()</p>
+<pre class="r"><code>head(data()$results[,c(3,4)])
+data(&quot;CO2&quot;)
+head(CO2, 3)</code></pre>
+</div>
+<div id="type-of-data" class="section level2">
+<h2>Type of data</h2>
+<ul>
+<li>character: “a”, “swc”</li>
+<li>numeric: 2, 15.5</li>
+<li>integer: 2L (the L tells R to store this as an integer)</li>
+<li>logical: TRUE, FALSE</li>
+<li>complex: 1+4i (complex numbers with real and imaginary parts)</li>
+</ul>
+<p>“&lt;-” and “=” can be used to assign values. “&lt;-” is for the global environment, and “=” is for local. Try code below:</p>
+<pre class="r"><code>mean(x = 1:10); x; mean(x &lt;- 1:10); x</code></pre>
+</div>
+<div id="data-structures" class="section level2">
+<h2>Data structures</h2>
+<ul>
+<li><strong>vector</strong>, the most common and basic data structure in R;</li>
+<li><strong>factors</strong>, variables take on a limited number of different values, often referred to as categorical variables;</li>
+<li><strong>data frame</strong>, a very important data type in R for most tabular data;</li>
+<li><strong>matrix</strong>, matrices are an extension of the numeric or character vectors;</li>
+<li><strong>list</strong>, a container.</li>
+</ul>
+<p>Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames).
+To check the types or structures of data, “class()” can be employed.</p>
+<pre class="r"><code>#If there are different types of data in a vector, then it forcely forms a charactpr vector:
+a &lt;- c(1,2,3); b &lt;- c(1L,&quot;apple&quot;,2+5i, logical(2))
+a; b
+
+#factor:
+c &lt;- factor(c(1:5,1,3,5)); c
+
+# matrix
+m &lt;- matrix(1:6, nrow = 2, ncol = 3); n &lt;- matrix(1:6, nrow = 3, ncol = 2)
+m; n; m%*%n; n%*%m
+
+# data frame
+head(CO2)
+
+# list
+list &lt;- list(a,b,c,CO2,m,n)</code></pre>
+</div>
+<div id="functions-and-loops" class="section level2">
+<h2>Functions and loops</h2>
+<p>Functions sturcture:</p>
+<pre class="r"><code>myfunction &lt;- function(arg1, arg2, ... ){
+statements
+return(object)
+}</code></pre>
+<p>Example:</p>
+<pre class="r"><code>myfunct &lt;- function(x){
+  y=x^3+x^2+x+1
+}
+x &lt;- seq(-10,10,0.5)
+y &lt;- myfunct(x)</code></pre>
+<p>for loop:</p>
+<pre class="r"><code>for (val in sequence) {
+  statement
+}
+
+# Example:
+for (i in 1:5) {
+  print(i)
+}</code></pre>
+<p>while loop:</p>
+<pre class="r"><code>while (test_expression) {
+   statement
+}
+
+# Example:
+v &lt;- c(&quot;Hello&quot;,&quot;while loop&quot;)
+cnt &lt;- 2
+while (cnt &lt; 7) {
+   print(v)
+   cnt = cnt + 1
+}</code></pre>
+<p>repeat loop:</p>
+<pre class="r"><code>repeat { 
+   commands 
+   if(condition) {
+      break
+   }
+}
+
+# Example
+v &lt;- c(&quot;Hello&quot;,&quot;loop&quot;)
+cnt &lt;- 2
+repeat {
+   print(v)
+   cnt &lt;- cnt+1
+   if(cnt &gt; 5) {
+      break
+   }
+}</code></pre>
+</div>
+<div id="file-operations" class="section level2">
+<h2>File operations</h2>
+<p>R can read files from local files, online files, and memory, with variant types. With the help of some packages, R can access the Excel file as well. E.g.</p>
+<pre class="r"><code>t1 &lt;- read.table(&quot;local file&quot;)
+t2 &lt;- read.csv(&#39;https://data.ok.gov/sites/default/files/unspsc%20codes_3.csv&#39;)
+t3 &lt;- readLines(&quot;clipboard&quot;)
+
+library(&quot;readxl&quot;)
+t4 &lt;- read_excel(&quot;my_file.xls&quot;)</code></pre>
+<p>Enter data using a spreadsheet</p>
+<pre class="r"><code>edit(t2)
+fix(t2)</code></pre>
+<p>Operations on data frame, like merge, subset, isolate …(demo)</p>
+<p>Write files:</p>
+<pre class="r"><code>sink(&quot;file.txt&quot;)
+writeLines()
+write.csv()
+write.table()</code></pre>
+<p>Save writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date.</p>
+<pre class="r"><code>save.image(file = &quot;.RData&quot;, version = NULL,...)</code></pre>
+<p>The saved files can be read by using function <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html">load</a> or <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/attach.html">attach</a> (or <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html">data</a> in some cases).</p>
+</div>
+<div id="simple-graphs-with-r" class="section level2">
+<h2>Simple Graphs with R</h2>
+<pre class="r"><code>t &lt;- c(1,1,2,2,3,3,6)
+names(t) &lt;- LETTERS[1:7]
+
+# subpanel option 1
+par(mfrow=c(3,2)) # row col
+
+# subpanel option 2
+layout ( matrix ( c (1 , 1 , 1 ,
+                     2 , 3 , 4 ,
+                     2 , 3 , 5) , nr = 3 , byrow = T) )
+
+plot(t)
+barplot(t)
+hist(t)
+pie(t)
+dotchart(t)
+boxplot(t)</code></pre>
+<p>Save images, <strong>Export</strong> is able to help save the plot for sure, but if you want high-quality figures, by using:</p>
+<pre class="r"><code>jpeg/png/pdf(&#39;rplot.jpg/png/pdf&#39;, width = 8, height = 8, unit=&quot;in&quot;, res=300)
+plot(x,y)
+dev.off()</code></pre>
+</div>
+<div id="the-common-workflow-of-r" class="section level2">
+<h2>The common workflow of R</h2>
+<ol style="list-style-type: decimal">
+<li>Create a specific working directory and set it as default by “setwd()”;</li>
+<li>Manage read/write files in subdirectory, and use “dir.create()”;</li>
+<li>Managing r image file (.RData) makes your work more efficient.</li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="r-advance" class="section level1">
+<h1>R advance</h1>
+<div id="apply-functions" class="section level2">
+<h2>Apply functions</h2>
+<p>To make a for loop more efficient, “apply()” function is introduced in R. The <code>apply</code> functions (<code>apply, sapply, lapply</code> etc.) are marginally faster than a regular for loop.</p>
+<pre class="r"><code>N &lt;- 10000
+x1 &lt;- runif(N)
+x2 &lt;- runif(N)
+d &lt;- as.data.frame(cbind(x1, x2))
+
+system.time(for (i in c(1:length(d[, 1]))) {
+    d$mean1[i] &lt;- mean(c(d[i, 1], d[i, 2]))
+})</code></pre>
+<pre><code>##    user  system elapsed 
+##    0.45    0.02    0.47</code></pre>
+<pre class="r"><code>system.time(d$mean2 &lt;- apply(d, 1, mean))</code></pre>
+<pre><code>##    user  system elapsed 
+##    0.05    0.00    0.05</code></pre>
+<pre class="r"><code>library(parallel)
+numCores &lt;- detectCores()
+cl &lt;- makeCluster(numCores)
+system.time(d$mean3 &lt;- parApply(cl,d,1, mean))</code></pre>
+<pre><code>##    user  system elapsed 
+##    0.03    0.00    0.03</code></pre>
+<pre class="r"><code>stopCluster(cl)</code></pre>
+</div>
+<div id="intro-to-ggplot2" class="section level2">
+<h2>Intro to ggplot2</h2>
+<p>Basic, use <code>qplot()</code> function (quick plot), designed primarily for interactive use: it makes several assumptions that speed most cases.</p>
+<pre class="r"><code>data(&quot;diamonds&quot;)
+
+qplot(carat, price, data = diamonds)
+qplot(log(carat),log(price),data = diamonds)
+qplot(carat, x*y*z, data = diamonds)
+head(diamonds)
+
+dsmall &lt;- diamonds[sample(nrow(diamonds),100),]
+qplot(carat, price, data = dsmall, col=color)
+
+# shape = cut;
+# alpha = I (transparent)
+# ...</code></pre>
+<p>Plot <code>geoms</code> (geometics)
+geom = point/ smooth/ boxplot/ path/ histogram …</p>
+<pre class="r"><code>qplot(color, price, data = dsmall, geom = &#39;boxplot&#39;, 
+      #fill = color,
+      size = 1) + geom_boxplot(outlier.color = &quot;green&quot;,
+                                outlier.size = 10,
+                                fill = &quot;red&quot;,
+                                col = &quot;blue&quot;)</code></pre>
+<p>When designing multilayered plots with different data sources it can get in the way. This section describes what those defaults are, and how they map to the fuller <code>ggplot()</code> syntax.</p>
+<pre class="r"><code>qplot(carat, price, data = dsmall, geom = c(&quot;point&quot;, &quot;smooth&quot;))
+ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth()</code></pre>
+<p>When the conditions get more complecated, like we want to check the carat and price relationship under different cut, or cut and color…</p>
+<pre class="r"><code>gg &lt;- ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+  geom_point() + labs(title=&quot;Scatterplot&quot;, x=&quot;Carat&quot;, y=&quot;Price&quot;)
+gg + facet_wrap( ~ cut, ncol=3)
+gg + facet_grid(color ~ cut) </code></pre>
+</div>
+<div id="nicely-output-r-markdown" class="section level2">
+<h2>Nicely output: <a href="https://rmarkdown.rstudio.com/">R markdown</a></h2>
+<p>The combination of R and markdown, a text enriched conversion tool for the web? writers and it allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid formats (PDF, HTML, MS Word). R markdown even allows you to write academic manuscripts with a well-organized bibliography.</p>
+<pre class="r"><code>install.packages(&quot;rmarkdown&quot;)
+install.packages(&quot;rticles&quot;)</code></pre>
+<pre><code>Text formatting 
+------------------------------------------------------------
+
+*italic*  or _italic_
+**bold**   __bold__
+`code`
+superscript^2^ and subscript~2~
+
+Headings
+------------------------------------------------------------
+
+# 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header
+
+Lists
+------------------------------------------------------------
+
+*   Bulleted list item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Numbered list item 1
+
+1.  Item 2. The numbers are incremented automatically in the output.
+
+Links and images
+------------------------------------------------------------
+
+&lt;http://example.com&gt;
+
+[linked phrase](http://example.com)
+
+![optional caption text](path/to/img.png)
+
+Tables 
+------------------------------------------------------------
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell</code></pre>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="homework" class="section level1">
+<h1>Homework</h1>
+<p><em>Arabidopsis</em> is a commonly used model organism. There is a preliminary result of the sequencing analysis of <em>Arabidopsis thaliana</em>, and please conduct further analysis associating the questions.</p>
+<ol style="list-style-type: decimal">
+<li><p>Please read the following data into a data frame, and get read of NA values.
+<a href="https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/tair/DESeq2_DEG.Day1-Day0.txt" class="uri">https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/tair/DESeq2_DEG.Day1-Day0.txt</a></p></li>
+<li><p>By applying <a href="https://bioconductor.org/packages/release/data/annotation/html/org.At.tair.db.html"><em>org.At.tair.db</em></a> package. Based on the manual, transfer the original <em>gene_id</em> into gene symbol.</p>
+<ul>
+<li>You may notice some original gene ids in the have no corresponding gene symbol. This is because these genes have little biological meaning or they have not been annotated yet. Try to count the number of these ids.<br />
+</li>
+<li>Meanwhile, some original ids have more than one gene symbol due to they were named by the different research centers. Complete the gene id convert with an output like below:</li>
+</ul></li>
+</ol>
+<pre><code>           gene_id   baseMean log2FoldChange ...              sym
+         AT2G33830 1938.15972      -2.560609 ...      AtDRM2/DRM2
+         AT2G33750    9.78974     -19.989301 ...      ATPUP2/PUP2
+         AT3G54500 2238.31465       2.720430 ...             LNK2
+         AT2G46830  169.50508       3.527082 ...      AtCCA1/CCA1
+         AT1G28330 1636.02224      -1.493341 ... AtDRM1/DRM1/DYL1
+         AT1G48598   39.84136      -9.779030 ...         CPuORF31
+</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Find out the top 10 significantly expressed genes by setting padj value less than 0.05.</p>
+<ul>
+<li><p>Generate the barplot of <code>baseMean</code> of the top 10 most significantly expressed genes that have symbol names. To make it visually compared easily, you may want to use logarithmic value, and show gene symbols instead of gene ids.</p></li>
+<li><p>Generate a dot plot of their <code>log2FoldChange</code> in increasing order, and show the error bar as log folder change standard error (lfcSE).</p></li>
+</ul></li>
+<li><p>Isolate all of the differentially expressed genes into a new data frame, and count the number of significantly up/down-regulated genes.</p></li>
+<li><p>Plot the relationship between <code>log2FoldChange</code> and -log(<code>padj</code>), with highlighting the significantlly up/down-regulated genes in the figure (Volcano plot).</p></li>
+</ol>
+<p>Please complete above tasks and generate a report with R markdown, and show all the code you written in chuncks.</p>
+</div>
