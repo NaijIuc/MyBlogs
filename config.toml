@@ -1,8 +1,11 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "A Hugo website"
+title = "Jian Cui Ph.D."
 theme = "ezhil"
-googleAnalytics = ""
+googleAnalytics = "UA-123-45"
+
+copyright = "© Copyright notice by Jian.c"
+
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
