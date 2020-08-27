@@ -1,6 +1,6 @@
 baseURL = "https://example.com"
 title = "Your title"
-theme = "hugo-theme-fuji"
+theme = "solar-theme-hugo"
 paginate = 5
 
 [params]
