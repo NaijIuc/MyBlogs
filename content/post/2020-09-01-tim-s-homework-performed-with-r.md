@@ -26,7 +26,7 @@ $python wondrous.py bacon
 ```
 What happens if the program is given an UNwondrous number?
 
-My demo:
+**My demo:**
 ```r
 wonder.func <- function(x){
   wonder.list <- c()
