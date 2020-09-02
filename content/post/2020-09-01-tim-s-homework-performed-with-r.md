@@ -41,7 +41,7 @@ wonder.func <- function(x){
     wonder.list <- c(wonder.list, w)
     w = m.fuc(w)
   }
-  # return(length(wonder.list))
+  
   cat("",x, "is wondrous. \n" ,
       "It converges in", length(wonder.list), "steps\n",
       "content = ", wonder.list,1)
