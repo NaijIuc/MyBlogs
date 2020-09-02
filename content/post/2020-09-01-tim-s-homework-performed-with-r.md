@@ -9,9 +9,9 @@ categories:
 tags: []
 ---
 
-1. In _Gödel, Escher, Bach: An Eternal Golden Braid_, Douglas Hofstadter describes a property of integers:
+* In _Gödel, Escher, Bach: An Eternal Golden Braid_, Douglas Hofstadter describes a property of integers:
 
->We begin with your number, and if it is ODD, we triple it and add 1.  If it is EVEN, we take half ofit.  Then we repeat the process.  Call a number which eventually reaches 1 this way a WONDROUSnumber, and a number which doesn’t, an UNWONDROUS number.
+>We begin with your number, and if it is ODD, we triple it and add 1.  If it is EVEN, we take half of it.  Then we repeat the process.  Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.
 
 Write a Python script called `wondrous.py` that reads a positive integer from the command line and calculateswhether it’s wondrous.  If it is, the program tells the number of steps needed to reach 1. It should have thefollowing behavior:
 
@@ -26,9 +26,29 @@ $python wondrous.py bacon
 ```
 What happens if the program is given an UNwondrous number?
 
+My demo:
+```r
+wonder.func <- function(x){
+  wonder.list <- c()
+  w <- x
+  while (w > 1) {
+    m.fuc <- function(x){
+      y = NULL
+      ifelse(x %% 2 == 1, y <- x*3+1, y <- x/2)
+      return(y)
+    }
+    
+    wonder.list <- c(wonder.list, w)
+    w = m.fuc(w)
+  }
+  # return(length(wonder.list))
+  cat("",x, "is wondrous. \n" ,
+      "It converges in", length(wonder.list), "steps\n",
+      "content = ", wonder.list,1)
+}
+```
 
-
-2. Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither
+* Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither
 
  n1> n2< n3> n4< n5. . . 
 
@@ -46,7 +66,7 @@ $python zigzag.py 3.7
 3.7 is not an integer.
 ```
 
-3. Write a program called `mtxvec.py` that reads anN×Nmatrix from a tab-delimited file, places the elementsof its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is
+* Write a program called `mtxvec.py` that reads anN×Nmatrix from a tab-delimited file, places the elementsof its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is
 
 ```bash
 $cat data.tsv
@@ -64,7 +84,7 @@ v1.v2 = 188
 ```
 
 
-4. DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The _genetic code_ maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a _k_-letter alphabet.  Write a program called `nkwords.py` that takes in two integers, _k_ and _n_, and prints all _n_-letter words that can be constructed with the first _k_ letters of the alphabet.  For example:
+* DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The _genetic code_ maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a _k_-letter alphabet.  Write a program called `nkwords.py` that takes in two integers, _k_ and _n_, and prints all _n_-letter words that can be constructed with the first _k_ letters of the alphabet.  For example:
 
 ```bash
 $python nkwords.py 2 3
