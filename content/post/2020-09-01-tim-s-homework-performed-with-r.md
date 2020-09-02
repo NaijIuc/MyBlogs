@@ -29,15 +29,11 @@ What happens if the program is given an UNwondrous number?
 
 2.  Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither
 
-\begin{aligned}
-n1> n2< n3> n4< n5. . .
-\end{aligned}
+$ n1> n2< n3> n4< n5. . . $
 
 or
 
-\begin{aligned}
-n1< n2> n3< n4> n5. . .
-\end{aligned}
+$ n1< n2> n3< n4> n5. . . $
 
 Write a program called `zigzag.py` that determines the probability that a random permutation of the integers1 throughNwill be alternating.  It should return the number of alternating permutations, the total numberof permutations, and their ratio:
 
