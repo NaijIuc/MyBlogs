@@ -78,7 +78,7 @@ zigzag <- function(x){
   a = 1:(x-1)
   b = 2:x
 
-  t = all[b] - all[a]
+  t = all[,b] - all[,a]
   
   t[t<=-1] = -1
   t[t>=1] = 1
