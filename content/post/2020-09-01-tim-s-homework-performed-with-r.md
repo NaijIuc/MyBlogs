@@ -27,6 +27,7 @@ $python wondrous.py bacon
 What happens if the program is given an UNwondrous number?
 
 
+
 2.  Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither
 
 $ n1> n2< n3> n4< n5. . . $
