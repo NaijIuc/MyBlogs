@@ -101,7 +101,7 @@ zigzag <- function(x){
   
 }
 ```
-* Write a program called `mtxvec.py` that reads anN×Nmatrix from a tab-delimited file, places the elementsof its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is
+* Write a program called `mtxvec.py` that reads an N×Nmatrix from a tab-delimited file, places the elements of its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is
 
 ```bash
 $cat data.tsv
@@ -117,7 +117,15 @@ v1 = 1 2 3 5 6 9
 v2 = 1 4 5 7 8 9
 v1.v2 = 188
 ```
+**My Demo:**
+```r
+M <- matrix(1:9, nrow = 3)
 
+v1 <- M[upper.tri(M, diag = T)] 
+v2 <- M[lower.tri(M, diag = T)]
+
+cat("v1.v2 = ", v1 %*% v2)
+```
 
 * DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The _genetic code_ maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a _k_-letter alphabet.  Write a program called `nkwords.py` that takes in two integers, _k_ and _n_, and prints all _n_-letter words that can be constructed with the first _k_ letters of the alphabet.  For example:
 
