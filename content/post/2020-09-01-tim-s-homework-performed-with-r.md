@@ -70,14 +70,15 @@ $python zigzag.py 3.7
 # This method looks for all the possibilities, which takes too much memory
 
 zigzag <- function(x){
+
   library(e1071)
   
   all <- permutations(x)
   
-  t <- NULL
-  for (i in 2:x) {
-    t <- cbind(t,all[,i] - all[,i-1] ) 
-  }
+  a = 1:(x-1)
+  b = 2:x
+
+  t = all[b] - all[a]
   
   t[t<=-1] = -1
   t[t>=1] = 1
