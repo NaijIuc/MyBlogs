@@ -68,6 +68,7 @@ v1.v2 = 188
 
 
 4.  DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The _genetic code_ maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a _k_-letter alphabet.  Write a program called `nkwords.py` that takes in two integers, _k_ and _n_, and prints all _n_-letter words that can be constructed with the first _k_ letters of the alphabet.  For example:
+
 ```bash
 $python nkwords.py 2 3
 AAA
