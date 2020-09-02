@@ -65,7 +65,42 @@ $python zigzag.py 3
 $python zigzag.py 3.7
 3.7 is not an integer.
 ```
+**My Demo:**
+```r
+# This method looks for all the possibilities, which takes too much memory
 
+zigzag <- function(x){
+  library(e1071)
+  
+  all <- permutations(x)
+  
+  t <- NULL
+  for (i in 2:x) {
+    t <- cbind(t,all[,i] - all[,i-1] ) 
+  }
+  
+  t[t<=-1] = -1
+  t[t>=1] = 1
+  
+  a <- seq(0,x-1,2)[-1]
+  b <- seq(1,x-1,2)
+  
+  seq.1 <- NULL
+  seq.1[a] <- 1
+  seq.1[b] <- -1
+  
+  seq.2 <- NULL
+  seq.2[a] <- -1
+  seq.2[b] <- 1
+  
+  f <- sum(apply(t, 1, function(x) all(x == seq.1))+
+        apply(t, 1, function(x) all(x == seq.2)))
+  
+  cat(f ,"\t", factorial(x), "\t", round(f/factorial(x),6))
+  
+  
+}
+```
 * Write a program called `mtxvec.py` that reads anN×Nmatrix from a tab-delimited file, places the elementsof its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is
 
 ```bash
