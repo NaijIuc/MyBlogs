@@ -143,3 +143,20 @@ BBB
 ```
 
 The words don’t need to be printed in any particular order.  Your code should include controls to catch invalidinput.
+
+**My Demo:**
+```r
+my.func <- function(k,n){
+  vars <- LETTERS[1:k]
+  
+  m.list <- list()
+  for (i in 1:n) {
+    m.list[[i]] <- vars
+  }
+  t = expand.grid(m.list)
+  names(t) <- NULL
+  return(t)
+}
+
+my.func(2,3)
+```
