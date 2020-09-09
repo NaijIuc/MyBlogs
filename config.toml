@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Jian Cui Ph.D."
-theme = "starter-academic"
+theme = "ezhil"
 googleAnalytics = "UA-123-45"
 
 copyright = "Copyright © by Jian Cui"
