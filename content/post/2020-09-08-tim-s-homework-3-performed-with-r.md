@@ -59,7 +59,7 @@ for (i in 1:10000) {
 hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
-Check the "head tail" result ![](hwk3/hw3.fig1.png)
+Check the "head tail" result ![](hwk3/hw3.fig1.png){ width=50% }
 
 Check the "head head" result [here](hwk3/hw3.fig2.png)
 
