@@ -7,6 +7,10 @@ categories:
   - R
   - Teaching
 tags: []
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: true
 ---
 How many times do you expect you will have to toss an unbiased coin before it comes up "heads" twice in a row? How many times do you expect you will need to flip it before it comes up "heads" immediately followed by "tails"? Write a program that simulates a string of fair coin tosses. The program should:
 
