@@ -59,9 +59,9 @@ for (i in 1:10000) {
 hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
-Check the "head tail" result ![figure](hwk3/hw3.fig1.png)
+The "head tail" result ![](hwk3/hw3.fig1.png)
 
-Check the "head head" result [here](hwk3/hw3.fig2.png)
+The "head head" result ![](hwk3/hw3.fig2.png)
 
 __I want to compare thses two results and put both histgram in one figure:__
 
@@ -85,4 +85,4 @@ legend("topright", legend=c("head tail", "head head"),
        fill=c(c1, c2),cex=0.8,
        box.lty=0)
 ```
-Check the "comperasion" result [here](hwk3/hw3.fig3.png)
+The "comperasion" result ![](hwk3/hw3.fig3.png)
