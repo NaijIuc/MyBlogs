@@ -9,6 +9,7 @@ categories:
 tags: []
 ---
 How many times do you expect you will have to toss an unbiased coin before it comes up "heads" twice in a row? How many times do you expect you will need to flip it before it comes up "heads" immediately followed by "tails"? Write a program that simulates a string of fair coin tosses. The program should:
+
 * Perform 10000 trials in which a coin is tossed until "heads-heads" occurs, and 10000 trials in which a coin is tossed until "heads-tails" occurs.
 
 ```r
@@ -24,7 +25,8 @@ x = -1
   repeat{
     t = sample(coin, 2, replace = T)
     x = x + 1
-    if(all(t == c("head", "tail")) | all(t == c("tail", "head"))){ # or for another toss: if(all(t == c("head", "head"))){
+    if(all(t == c("head", "tail")) | all(t == c("tail", "head"))){ 
+    # or for another toss: if(all(t == c("head", "head"))){
       break
     }
   }
@@ -40,7 +42,8 @@ for (i in 1:10000) {
   repeat{
     t = sample(coin, 2, replace = T)
     x = x + 1
-    if(all(t == c("head", "tail")) | all(t == c("tail", "head"))){ # or for another toss: if(all(t == c("head", "head"))){
+    if(all(t == c("head", "tail")) | all(t == c("tail", "head"))){ 
+    # or for another toss: if(all(t == c("head", "head"))){
       break
     }
   }
@@ -52,20 +55,23 @@ for (i in 1:10000) {
 hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
-
+["Head tail figure"]("D:\Jian Cui\Documents\MyGit\MyBlogs\static\post\2020-09-08-tim-s-homework-3-performed-with-r\hw3.fig1.png")
 __I want to compare thses two results and put both histgram in one figure:__
 
 ```r
+# As the two histograms would overlap, here the color definition helps create two transparent colors
 c1 <- rgb(173,216,230,max = 255, alpha = 90)
 c2 <- rgb(255,192,203, max = 255, alpha = 90)
 
-b <- min(c(ht,hh))
-e <- max(c(ht,hh))
-ax <- pretty(b:e, n = 31)
+# To determine proper breaks of both histograms
+bks <- pretty(min(c(ht,hh)):max(c(ht,hh)), 
+             n = 31)
 
-hg.ht <- hist(ht, breaks = ax, plot = F)
-hg.hh <- hist(hh, breaks = ax, plot = F)
+# To get the histgram frequencies
+hg.ht <- hist(ht, breaks = bks, plot = F)
+hg.hh <- hist(hh, breaks = bks, plot = F)
 
+# Plotting
 plot(hg.ht, col = c1, main = "Comparsion", xlab = "Times")
 plot(hg.hh, col = c2, add = T)
 legend("topright", legend=c("head tail", "head head"),
