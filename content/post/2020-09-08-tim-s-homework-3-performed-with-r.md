@@ -87,4 +87,4 @@ legend("topright", legend=c("head tail", "head head"),
 ```
 The "comperasion" result ![](hwk3/hw3.fig3.png)
 
-**Simple conclusion:** Even though it is more possible to have a "head tail" statistically across multiple tosses, that "head head" pattern shows in the first time of you has a dramatically high chance.
+**Simple conclusion:** presumably, the sampling method is unbiased. Even though it is more possible to have a "head tail" statistically across multiple tosses, that "head head" pattern shows in the first time of you has a dramatically high chance.
