@@ -56,6 +56,7 @@ hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
 Check the "head tail" result [here](hwk3/hw3.fig1.png){width=80% height=80%}
+
 Check the "head head" result [here](hwk3/hw3.fig2.png)
 
 __I want to compare thses two results and put both histgram in one figure:__
