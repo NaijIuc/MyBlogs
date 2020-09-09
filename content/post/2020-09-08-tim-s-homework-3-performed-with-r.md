@@ -55,7 +55,7 @@ for (i in 1:10000) {
 hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
-
+[fig1](hwk3/hw3.fig1.png)
 
 __I want to compare thses two results and put both histgram in one figure:__
 
