@@ -66,7 +66,8 @@ The "head head" result ![](hwk3/hw3.fig2.png)
 __I want to compare thses two results and put both histgram in one figure:__
 
 ```r
-# As the two histograms would overlap, here the color definition helps create two transparent colors
+# As the two histograms would overlap, 
+# here the color definition helps create two transparent colors
 c1 <- rgb(173,216,230,max = 255, alpha = 90)
 c2 <- rgb(255,192,203, max = 255, alpha = 90)
 
