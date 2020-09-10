@@ -59,9 +59,7 @@ for (i in 1:10000) {
 hist(ht, main = "Head tail", xlab = "Times")
 hist(hh, main = "Head head", xlab = "Times")
 ```
-The "head tail" result ![](hwk3/hw3.fig1.png)
-
-The "head head" result ![](hwk3/hw3.fig2.png)
+The visulized results of "head tail" (left) and "head head" (right) ![](hwk3/hw3.fig1.png)
 
 __I want to compare thses two results and put both histgram in one figure:__
 
