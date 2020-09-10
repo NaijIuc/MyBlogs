@@ -1,52 +1,44 @@
-baseurl = "/"
-languageCode = "en-us"
+# Configuration of Hugo
+# Guide: https://sourcethemes.com/academic/docs/get-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+#
+# This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
+# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
+
+# Title of your site
 title = "Jian CUI Ph.D."
+
+# The URL of your site.
+# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+baseurl = "https://cuij.netlify.app/"
+
+# Enter a copyright notice to display in the site footer.
+# To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
+copyright = ""
+
+############################
+## Advanced options below ##
+############################
+
+# Name of Academic theme folder in `themes/`.
 theme = "ezhil"
-googleAnalytics = "UA-123-45"
 
-copyright = "Copyright © by Jian Cui"
+# Get last modified date for content from Git?
+enableGitInfo = false
 
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
+defaultContentLanguageInSubdir = false
+removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
 
-# Enable syntax highlighting.
-pygmentsstyle = "solarized-dark"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+summaryLength = 30  # Listing summary length in words. Also, see `abstract_length` in `params.toml`.
+paginate = 10  # Number of items per page in paginated lists.
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
-
-[params]
-    # Blog subtitle which appears below blog title. Supports markdown.
-    subtitle = "Postdoctoral associate @ [Drug Discovery Institute - University of Pittsburgh](https://upddi.pitt.edu/)"
-
-    # Content types which are excludes Disqus comments.
-    disableDisqusTypes = ["page"]
-
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.12.0"
-    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    MathJaxVersion = "2.7.5"
-    
-    # Switch to dark mode or auto detect mode from OS (Optional).
-    # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
-    mode = "dark" # "dark" or "auto"
-
-    # path to the favicon, under "static"
-    favicon = "favicon.ico"
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-    
-    # Workaround Hugo publishing taxonomy URLs as plurals - consistently use singular across Academic.
+# Workaround Hugo publishing taxonomy URLs as plurals - consistently use singular across Academic.
 [permalinks]
   authors = "/author/:slug/"
   tags = "/tag/:slug/"
@@ -94,44 +86,22 @@ pygmentscodefencesguesssyntax = true
   includeNewer = true
   toLower = true
 
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+  [[related.indices]]
+    name = "title"
+    weight = 60.0
 
-[[menu.main]]
-name = "All posts"
-url = "/post"
-weight = 2
+  [[related.indices]]
+    name = "summary"
+    weight = 50.0
 
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 3
+  [[related.indices]]
+    name = "tags"
+    weight = 80.0
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
+  [[related.indices]]
+    name = "categories"
+    weight = 70.0
 
-# Social media links which shows up on site header.
-# Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
-
-[[params.social]]
-name = "Email"
-icon = "mail"
-url = "mailto:cuij@pitt.edu"
-
-[[params.social]]
-name = "Github"
-icon = "github"
-url = "https://github.com/NaijIuc"
-
-[[params.social]]
-name = "LinkedIn"
-icon = "linkedin"
-url = "https://www.linkedin.com/in/jian-cui-61ab121b0/"
-
-# Enable tags.
-[taxonomies]
-   tag = "tags"
+  [[related.indices]]
+    name = "authors"
+    weight = 20.0
