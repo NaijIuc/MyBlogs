@@ -84,6 +84,6 @@ legend("topright", legend=c("head tail", "head head"),
        fill=c(c1, c2),cex=0.8,
        box.lty=0)
 ```
-The "comperasion" result ![](hwk3/hw3.fig3.png)
+The "comperasion" result ![](hwk3/hw3.fig2.png)
 
 **Simple conclusion:** According to the comparison figure, presumably, the sampling method is unbiased. Even though it is more possible to have a "head tail" statistically across multiple tosses, that "head head" pattern shows in the first time of you toss has a dramatically high chance.
