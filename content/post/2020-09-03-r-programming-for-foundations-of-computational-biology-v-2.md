@@ -9,6 +9,8 @@ categories:
 tags: []
 ---
 1. Ask for help, example
+1. Run R in command line and R studio (recommended for small project)
+1. Working directory
 1. Package management
 1. Data type & structure
 `data.frame` operations
