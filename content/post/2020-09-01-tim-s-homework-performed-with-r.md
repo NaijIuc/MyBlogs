@@ -158,5 +158,9 @@ my.func <- function(k,n){
   return(t)
 }
 
-my.func(2,3)
+# my.func(2,3)
+
+# args = commandArgs(trailingOnly=TRUE)
+
+# my.func(args[1], args[2])
 ```
