@@ -22,14 +22,15 @@ output: html_notebook
 </ol>
 <pre class="r"><code>df &lt;- readLines(&quot;https://ftp.ncbi.nlm.nih.gov/geo/series/GSE2nnn/GSE2583/suppl/GSE2583_correctly_ordered_Klevecz_GEO_time_series_data.txt&quot;)
 
-df[c(1:3,56:59)]</code></pre>
+df[c(1:3,56:59,9393)]</code></pre>
 <pre><code>  [1] &quot;!Series_title\tGenome_Wide_Oscillations_in_Yeast&quot;                                                                                                                                                                                                                                                       
   [2] &quot;!Series_geo_accession\tGSE2583&quot;                                                                                                                                                                                                                                                                         
   [3] &quot;!Series_status\tPublic on Apr 29 2005&quot;                                                                                                                                                                                                                                                                  
   [4] &quot;\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t!series_matrix_table_begin&quot;                                                                                                                                                                                                                                            
   [5] &quot;GSM48136\tGSM48137\tGSM48138\tGSM48139\tGSM48140\tGSM48131\tGSM48132\tGSM48133\tGSM48134\tGSM48135\tGSM48149\tGSM48150\tGSM48141\tGSM48151\tGSM48142\tGSM48143\tGSM48144\tGSM48145\tGSM48146\tGSM48147\tGSM48148\tGSM48160\tGSM48161\tGSM48162\tGSM48157\tGSM48158\tGSM48152\tGSM48159\tGSM48153\tGSM48154\tGSM48155\tGSM48156\tID_REF&quot;
   [6] &quot;5.8\t7.9\t5.8\t8.7\t10.7\t6.8\t3\t19.8\t1.1\t2.1\t0.6\t7\t4.8\t4.4\t6.7\t8.8\t8.6\t8.2\t10.2\t5.1\t7.5\t8\t6.8\t2.6\t4.3\t9.5\t9.5\t9.1\t6\t5.4\t8.6\t13.8\t10000_at&quot;                                                                                                                                                                  
-  [7] &quot;175.2\t218.2\t379.3\t448.9\t470.4\t375.6\t363\t443.7\t304.4\t289.3\t186.5\t260.6\t216\t211.2\t266.6\t335\t366\t377.9\t296.8\t405.9\t342\t295.4\t322.1\t232\t278.7\t261.8\t386.2\t430.3\t331.9\t453.4\t348.8\t228.3\t10001_at&quot;</code></pre>
+  [7] &quot;175.2\t218.2\t379.3\t448.9\t470.4\t375.6\t363\t443.7\t304.4\t289.3\t186.5\t260.6\t216\t211.2\t266.6\t335\t366\t377.9\t296.8\t405.9\t342\t295.4\t322.1\t232\t278.7\t261.8\t386.2\t430.3\t331.9\t453.4\t348.8\t228.3\t10001_at&quot;                                                                                                          
+  [8] &quot;\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t!series_matrix_table_end&quot;</code></pre>
 <pre class="r"><code>t &lt;- grep(&#39;matrix_table&#39;,df) # locate the position of the two sentences
 read_start &lt;- t[1] + 1 # reservation starts
 read_end &lt;- t[2] - 1 # reservation ends
