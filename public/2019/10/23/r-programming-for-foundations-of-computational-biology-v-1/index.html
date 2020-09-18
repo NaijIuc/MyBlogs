@@ -91,8 +91,9 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
 <p>Excellent plotting function</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">demo(graphics)
-</code></pre></div><ul>
+<pre><code class="language-{r}">demo(graphics)
+</code></pre>
+<ul>
 <li>Rstudio</li>
 </ul>
 <h2 id="weakness">Weakness:</h2>
@@ -141,10 +142,11 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
 </ul>
 <h2 id="datasets">Datasets</h2>
 <p>There are 104 build-in datasets in R, and can be loaded with data()</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">head(data()$results[,c(3,4)])
-data(&#34;CO2&#34;)
+<pre><code class="language-{r}">head(data()$results[,c(3,4)])
+data(&quot;CO2&quot;)
 head(CO2, 3)
-</code></pre></div><h2 id="type-of-data">Type of data</h2>
+</code></pre>
+<h2 id="type-of-data">Type of data</h2>
 <ul>
 <li>character: &ldquo;a&rdquo;, &ldquo;swc&rdquo;</li>
 <li>numeric: 2, 15.5</li>
@@ -153,8 +155,9 @@ head(CO2, 3)
 <li>complex: 1+4i (complex numbers with real and imaginary parts)</li>
 </ul>
 <p>&ldquo;&lt;-&rdquo; and &ldquo;=&rdquo; can be used to assign values. &ldquo;&lt;-&rdquo; is for the global environment, and &ldquo;=&rdquo; is for local. Try code below:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mean(x = 1:10); x; mean(x &lt;- 1:10); x
-</code></pre></div><h2 id="data-structures">Data structures</h2>
+<pre><code class="language-{r,eval=FALSE}">mean(x = 1:10); x; mean(x &lt;- 1:10); x
+</code></pre>
+<h2 id="data-structures">Data structures</h2>
 <ul>
 <li><strong>vector</strong>, the most common and basic data structure in R;</li>
 <li><strong>factors</strong>, variables take on a limited number of different values, often referred to as categorical variables;</li>
@@ -164,8 +167,8 @@ head(CO2, 3)
 </ul>
 <p>Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames).
 To check the types or structures of data, &ldquo;class()&rdquo; can be employed.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#If there are different types of data in a vector, then it forcely forms a charactpr vector:
-a &lt;- c(1,2,3); b &lt;- c(1L,&#34;apple&#34;,2+5i, logical(2))
+<pre><code class="language-{r,eval=FALSE}">#If there are different types of data in a vector, then it forcely forms a charactpr vector:
+a &lt;- c(1,2,3); b &lt;- c(1L,&quot;apple&quot;,2+5i, logical(2))
 a; b
 
 #factor:
@@ -180,21 +183,24 @@ head(CO2)
 
 # list
 list &lt;- list(a,b,c,CO2,m,n)
-</code></pre></div><h2 id="functions-and-loops">Functions and loops</h2>
+</code></pre>
+<h2 id="functions-and-loops">Functions and loops</h2>
 <p>Functions sturcture:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">myfunction &lt;- function(arg1, arg2, ... ){
+<pre><code class="language-{r}">myfunction &lt;- function(arg1, arg2, ... ){
 statements
 return(object)
 }
-</code></pre></div><p>Example:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">myfunct &lt;- function(x){
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-{r,eval=FALSE}">myfunct &lt;- function(x){
   y=x^3+x^2+x+1
 }
 x &lt;- seq(-10,10,0.5)
 y &lt;- myfunct(x)
 
-</code></pre></div><p>for loop:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (val in sequence) {
+</code></pre>
+<p>for loop:</p>
+<pre><code class="language-{r}">for (val in sequence) {
   statement
 }
 
@@ -202,20 +208,22 @@ y &lt;- myfunct(x)
 for (i in 1:5) {
   print(i)
 }
-</code></pre></div><p>while loop:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">while (test_expression) {
+</code></pre>
+<p>while loop:</p>
+<pre><code class="language-{r}">while (test_expression) {
    statement
 }
 
 # Example:
-v &lt;- c(&#34;Hello&#34;,&#34;while loop&#34;)
+v &lt;- c(&quot;Hello&quot;,&quot;while loop&quot;)
 cnt &lt;- 2
 while (cnt &lt; 7) {
    print(v)
    cnt = cnt + 1
 }
-</code></pre></div><p>repeat loop:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">repeat { 
+</code></pre>
+<p>repeat loop:</p>
+<pre><code class="language-{r,eval=FALSE}">repeat { 
    commands 
    if(condition) {
       break
@@ -223,7 +231,7 @@ while (cnt &lt; 7) {
 }
 
 # Example
-v &lt;- c(&#34;Hello&#34;,&#34;loop&#34;)
+v &lt;- c(&quot;Hello&quot;,&quot;loop&quot;)
 cnt &lt;- 2
 repeat {
    print(v)
@@ -232,28 +240,33 @@ repeat {
       break
    }
 }
-</code></pre></div><h2 id="file-operations">File operations</h2>
+</code></pre>
+<h2 id="file-operations">File operations</h2>
 <p>R can read files from local files, online files, and memory, with variant types. With the help of some packages, R can access the Excel file as well. E.g.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">t1 &lt;- read.table(&#34;local file&#34;)
-t2 &lt;- read.csv(&#39;https://data.ok.gov/sites/default/files/unspsc%20codes_3.csv&#39;)
-t3 &lt;- readLines(&#34;clipboard&#34;)
+<pre><code class="language-{r,eval=FALSE}">t1 &lt;- read.table(&quot;local file&quot;)
+t2 &lt;- read.csv('https://data.ok.gov/sites/default/files/unspsc%20codes_3.csv')
+t3 &lt;- readLines(&quot;clipboard&quot;)
 
-library(&#34;readxl&#34;)
-t4 &lt;- read_excel(&#34;my_file.xls&#34;)
-</code></pre></div><p>Enter data using a spreadsheet</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">edit(t2)
+library(&quot;readxl&quot;)
+t4 &lt;- read_excel(&quot;my_file.xls&quot;)
+</code></pre>
+<p>Enter data using a spreadsheet</p>
+<pre><code class="language-{r}">edit(t2)
 fix(t2)
-</code></pre></div><p>Operations on data frame, like merge, subset, isolate &hellip;(demo)</p>
+</code></pre>
+<p>Operations on data frame, like merge, subset, isolate &hellip;(demo)</p>
 <p>Write files:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sink(&#34;file.txt&#34;)
+<pre><code class="language-{r,">sink(&quot;file.txt&quot;)
 writeLines()
 write.csv()
 write.table()
-</code></pre></div><p>Save writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">save.image(file = &#34;.RData&#34;, version = NULL,...)
-</code></pre></div><p>The saved files can be read by using function <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html">load</a> or <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/attach.html">attach</a> (or <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html">data</a> in some cases).</p>
+</code></pre>
+<p>Save writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date.</p>
+<pre><code class="language-{r,eval=FALSE}">save.image(file = &quot;.RData&quot;, version = NULL,...)
+</code></pre>
+<p>The saved files can be read by using function <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html">load</a> or <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/attach.html">attach</a> (or <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html">data</a> in some cases).</p>
 <h2 id="simple-graphs-with-r">Simple Graphs with R</h2>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">t &lt;- c(1,1,2,2,3,3,6)
+<pre><code class="language-{r}">t &lt;- c(1,1,2,2,3,3,6)
 names(t) &lt;- LETTERS[1:7]
 
 # subpanel option 1
@@ -270,11 +283,13 @@ hist(t)
 pie(t)
 dotchart(t)
 boxplot(t)
-</code></pre></div><p>Save images, <strong>Export</strong> is able to help save the plot for sure, but if you want high-quality figures, by using:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">jpeg/png/pdf(&#39;rplot.jpg/png/pdf&#39;, width = 8, height = 8, unit=&#34;in&#34;, res=300)
+</code></pre>
+<p>Save images, <strong>Export</strong> is able to help save the plot for sure, but if you want high-quality figures, by using:</p>
+<pre><code class="language-{r,eval=FALSE}">jpeg/png/pdf('rplot.jpg/png/pdf', width = 8, height = 8, unit=&quot;in&quot;, res=300)
 plot(x,y)
 dev.off()
-</code></pre></div><h2 id="the-common-workflow-of-r">The common workflow of R</h2>
+</code></pre>
+<h2 id="the-common-workflow-of-r">The common workflow of R</h2>
 <ol>
 <li>Create a specific working directory and set it as default by &ldquo;setwd()&quot;;</li>
 <li>Manage read/write files in subdirectory, and use &ldquo;dir.create()&quot;;</li>
@@ -283,7 +298,7 @@ dev.off()
 <h1 id="r-advance">R advance</h1>
 <h2 id="apply-functions">Apply functions</h2>
 <p>To make a for loop more efficient, &ldquo;apply()&rdquo; function is introduced in R. The <code>apply</code> functions (<code>apply, sapply, lapply</code> etc.) are marginally faster than a regular for loop.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">N &lt;- 10000
+<pre><code class="language-{r}">N &lt;- 10000
 x1 &lt;- runif(N)
 x2 &lt;- runif(N)
 d &lt;- as.data.frame(cbind(x1, x2))
@@ -299,9 +314,10 @@ numCores &lt;- detectCores()
 cl &lt;- makeCluster(numCores)
 system.time(d$mean3 &lt;- parApply(cl,d,1, mean))
 stopCluster(cl)
-</code></pre></div><h2 id="intro-to-ggplot2">Intro to ggplot2</h2>
+</code></pre>
+<h2 id="intro-to-ggplot2">Intro to ggplot2</h2>
 <p>Basic, use <code>qplot()</code> function (quick plot), designed primarily for interactive use: it makes several assumptions that speed most cases.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">data(&#34;diamonds&#34;)
+<pre><code class="language-{r}">data(&quot;diamonds&quot;)
 
 qplot(carat, price, data = diamonds)
 qplot(log(carat),log(price),data = diamonds)
@@ -314,28 +330,33 @@ qplot(carat, price, data = dsmall, col=color)
 # shape = cut;
 # alpha = I (transparent)
 # ...
-</code></pre></div><p>Plot <code>geoms</code> (geometics)
+</code></pre>
+<p>Plot <code>geoms</code> (geometics)
 geom = point/ smooth/ boxplot/ path/ histogram &hellip;</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">qplot(color, price, data = dsmall, geom = &#39;boxplot&#39;, 
+<pre><code class="language-{r}">qplot(color, price, data = dsmall, geom = 'boxplot', 
       #fill = color,
-      size = 1) + geom_boxplot(outlier.color = &#34;green&#34;,
+      size = 1) + geom_boxplot(outlier.color = &quot;green&quot;,
                                 outlier.size = 10,
-                                fill = &#34;red&#34;,
-                                col = &#34;blue&#34;)
+                                fill = &quot;red&quot;,
+                                col = &quot;blue&quot;)
 
-</code></pre></div><p>When designing multilayered plots with different data sources it can get in the way. This section describes what those defaults are, and how they map to the fuller <code>ggplot()</code> syntax.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">qplot(carat, price, data = dsmall, geom = c(&#34;point&#34;, &#34;smooth&#34;))
+</code></pre>
+<p>When designing multilayered plots with different data sources it can get in the way. This section describes what those defaults are, and how they map to the fuller <code>ggplot()</code> syntax.</p>
+<pre><code class="language-{r}">qplot(carat, price, data = dsmall, geom = c(&quot;point&quot;, &quot;smooth&quot;))
 ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth()
-</code></pre></div><p>When the conditions get more complecated, like we want to check the carat and price relationship under different cut, or cut and color&hellip;</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">gg &lt;- ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
-  geom_point() + labs(title=&#34;Scatterplot&#34;, x=&#34;Carat&#34;, y=&#34;Price&#34;)
+</code></pre>
+<p>When the conditions get more complecated, like we want to check the carat and price relationship under different cut, or cut and color&hellip;</p>
+<pre><code class="language-{r}">gg &lt;- ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+  geom_point() + labs(title=&quot;Scatterplot&quot;, x=&quot;Carat&quot;, y=&quot;Price&quot;)
 gg + facet_wrap( ~ cut, ncol=3)
 gg + facet_grid(color ~ cut) 
-</code></pre></div><h2 id="nicely-output-r-markdownhttpsrmarkdownrstudiocom">Nicely output: <a href="https://rmarkdown.rstudio.com/">R markdown</a></h2>
+</code></pre>
+<h2 id="nicely-output-r-markdownhttpsrmarkdownrstudiocom">Nicely output: <a href="https://rmarkdown.rstudio.com/">R markdown</a></h2>
 <p>The combination of R and markdown, a text enriched conversion tool for the web? writers and it allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid formats (PDF, HTML, MS Word). R markdown even allows you to write academic manuscripts with a well-organized bibliography.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">install.packages(&#34;rmarkdown&#34;)
-install.packages(&#34;rticles&#34;)
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Text formatting 
+<pre><code class="language-{r,eval=FALSE}">install.packages(&quot;rmarkdown&quot;)
+install.packages(&quot;rticles&quot;)
+</code></pre>
+<pre><code>Text formatting 
 ------------------------------------------------------------
 
 *italic*  or _italic_
@@ -383,7 +404,8 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
-</code></pre></div>
+</code></pre>
+
 		</div>
 
 		<div class="post-tags">

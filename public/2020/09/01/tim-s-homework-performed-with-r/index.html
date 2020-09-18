@@ -71,103 +71,110 @@
 <p>We begin with your number, and if it is ODD, we triple it and add 1.  If it is EVEN, we take half of it.  Then we repeat the process.  Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.</p>
 </blockquote>
 <p>Write a Python script called <code>wondrous.py</code> that reads a positive integer from the command line and calculateswhether it’s wondrous.  If it is, the program tells the number of steps needed to reach 1. It should have thefollowing behavior:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python wondrous.py <span style="color:#2aa198">15</span>
+<pre><code class="language-bash">$ python wondrous.py 15
 
-<span style="color:#2aa198">15</span> is wondrous.  It converges in <span style="color:#2aa198">17</span> steps.
+15 is wondrous.  It converges in 17 steps.
 
-<span style="color:#268bd2">$python</span> wondrous.py bacon
+$python wondrous.py bacon
 
 ‘bacon’ is not an integer.
-</code></pre></div><p>What happens if the program is given an UNwondrous number?</p>
+</code></pre>
+<p>What happens if the program is given an UNwondrous number?</p>
 <p><strong>My demo:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">wonder.func <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
-  wonder.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>()
-  w <span style="color:#719e07">&lt;-</span> x
-  <span style="color:#268bd2">while </span>(w <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">1</span>) {
-    m.fuc <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
-      y <span style="color:#719e07">=</span> <span style="color:#cb4b16">NULL</span>
-      <span style="color:#268bd2">ifelse</span>(x <span style="color:#719e07">%%</span> <span style="color:#2aa198">2</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">1</span>, y <span style="color:#719e07">&lt;-</span> x<span style="color:#719e07">*</span><span style="color:#2aa198">3+1</span>, y <span style="color:#719e07">&lt;-</span> x<span style="color:#719e07">/</span><span style="color:#2aa198">2</span>)
-      <span style="color:#268bd2">return</span>(y)
+<pre><code class="language-r">wonder.func &lt;- function(x){
+  wonder.list &lt;- c()
+  w &lt;- x
+  while (w &gt; 1) {
+    m.fuc &lt;- function(x){
+      y = NULL
+      ifelse(x %% 2 == 1, y &lt;- x*3+1, y &lt;- x/2)
+      return(y)
     }
     
-    wonder.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(wonder.list, w)
-    w <span style="color:#719e07">=</span> <span style="color:#268bd2">m.fuc</span>(w)
+    wonder.list &lt;- c(wonder.list, w)
+    w = m.fuc(w)
   }
   
-  <span style="color:#268bd2">cat</span>(<span style="color:#2aa198">&#34;&#34;</span>,x, <span style="color:#2aa198">&#34;is wondrous. \n&#34;</span> ,
-      <span style="color:#2aa198">&#34;It converges in&#34;</span>, <span style="color:#268bd2">length</span>(wonder.list), <span style="color:#2aa198">&#34;steps\n&#34;</span>,
-      <span style="color:#2aa198">&#34;content = &#34;</span>, wonder.list,<span style="color:#2aa198">1</span>)
+  cat(&quot;&quot;,x, &quot;is wondrous. \n&quot; ,
+      &quot;It converges in&quot;, length(wonder.list), &quot;steps\n&quot;,
+      &quot;content = &quot;, wonder.list,1)
 }
-</code></pre></div><ul>
+</code></pre>
+<ul>
 <li>Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither</li>
 </ul>
 <p>n1&gt; n2&lt; n3&gt; n4&lt; n5. . .</p>
 <p>or</p>
 <p>n1&lt; n2&gt; n3&lt; n4&gt; n5. . .</p>
 <p>Write a program called <code>zigzag.py</code> that determines the probability that a random permutation of the integers1 throughNwill be alternating.  It should return the number of alternating permutations, the total numberof permutations, and their ratio:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> zigzag.py <span style="color:#2aa198">3</span>
-<span style="color:#2aa198">4</span> <span style="color:#2aa198">6</span> 0.666667
+<pre><code class="language-bash">$python zigzag.py 3
+4 6 0.666667
 
-<span style="color:#268bd2">$python</span> zigzag.py 3.7
+$python zigzag.py 3.7
 3.7 is not an integer.
-</code></pre></div><p><strong>My Demo:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># This method looks for all the possibilities, which takes too much memory</span>
+</code></pre>
+<p><strong>My Demo:</strong></p>
+<pre><code class="language-r"># This method looks for all the possibilities, which takes too much memory
 
-zigzag <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
+zigzag &lt;- function(x){
 
-  <span style="color:#268bd2">library</span>(e1071)
+  library(e1071)
   
-  all <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">permutations</span>(x)
+  all &lt;- permutations(x)
   
-  a <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span><span style="color:#719e07">:</span>(x<span style="color:#2aa198">-1</span>)
-  b <span style="color:#719e07">=</span> <span style="color:#2aa198">2</span><span style="color:#719e07">:</span>x
+  a = 1:(x-1)
+  b = 2:x
 
-  t <span style="color:#719e07">=</span> all[,b] <span style="color:#719e07">-</span> all[,a]
+  t = all[,b] - all[,a]
   
-  t[t<span style="color:#719e07">&lt;=</span><span style="color:#2aa198">-1</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">-1</span>
-  t[t<span style="color:#719e07">&gt;=</span><span style="color:#2aa198">1</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>
+  t[t&lt;=-1] = -1
+  t[t&gt;=1] = 1
   
-  a <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">seq</span>(<span style="color:#2aa198">0</span>,x<span style="color:#2aa198">-1</span>,<span style="color:#2aa198">2</span>)[<span style="color:#2aa198">-1</span>]
-  b <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">seq</span>(<span style="color:#2aa198">1</span>,x<span style="color:#2aa198">-1</span>,<span style="color:#2aa198">2</span>)
+  a &lt;- seq(0,x-1,2)[-1]
+  b &lt;- seq(1,x-1,2)
   
-  seq.1 <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
-  seq.1[a] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">1</span>
-  seq.1[b] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">-1</span>
+  seq.1 &lt;- NULL
+  seq.1[a] &lt;- 1
+  seq.1[b] &lt;- -1
   
-  seq.2 <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
-  seq.2[a] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">-1</span>
-  seq.2[b] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">1</span>
+  seq.2 &lt;- NULL
+  seq.2[a] &lt;- -1
+  seq.2[b] &lt;- 1
   
-  f <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">sum</span>(<span style="color:#268bd2">apply</span>(t, <span style="color:#2aa198">1</span>, <span style="color:#268bd2">function</span>(x) <span style="color:#268bd2">all</span>(x <span style="color:#719e07">==</span> seq.1))<span style="color:#719e07">+</span>
-        <span style="color:#268bd2">apply</span>(t, <span style="color:#2aa198">1</span>, <span style="color:#268bd2">function</span>(x) <span style="color:#268bd2">all</span>(x <span style="color:#719e07">==</span> seq.2)))
+  f &lt;- sum(apply(t, 1, function(x) all(x == seq.1))+
+        apply(t, 1, function(x) all(x == seq.2)))
   
-  <span style="color:#268bd2">cat</span>(f ,<span style="color:#2aa198">&#34;\t&#34;</span>, <span style="color:#268bd2">factorial</span>(x), <span style="color:#2aa198">&#34;\t&#34;</span>, <span style="color:#268bd2">round</span>(f<span style="color:#719e07">/</span><span style="color:#268bd2">factorial</span>(x),<span style="color:#2aa198">6</span>))
+  cat(f ,&quot;\t&quot;, factorial(x), &quot;\t&quot;, round(f/factorial(x),6))
   
   
 }
-</code></pre></div><ul>
+</code></pre>
+<ul>
 <li>Write a program called <code>mtxvec.py</code> that reads an N×Nmatrix from a tab-delimited file, places the elements of its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$cat</span> data.tsv
-<span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> 
-<span style="color:#2aa198">4</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">6</span> 
-<span style="color:#2aa198">7</span> <span style="color:#2aa198">8</span> <span style="color:#2aa198">9</span>
-</code></pre></div><p>the output would be</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> mtxvec.py data.tsv
-<span style="color:#268bd2">v1</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">6</span> <span style="color:#2aa198">9</span>
-<span style="color:#268bd2">v2</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span> <span style="color:#2aa198">4</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">7</span> <span style="color:#2aa198">8</span> <span style="color:#2aa198">9</span>
-v1.v2 <span style="color:#719e07">=</span> <span style="color:#2aa198">188</span>
-</code></pre></div><p><strong>My Demo:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">M <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">matrix</span>(<span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">9</span>, nrow <span style="color:#719e07">=</span> <span style="color:#2aa198">3</span>)
+<pre><code class="language-bash">$cat data.tsv
+1 2 3 
+4 5 6 
+7 8 9
+</code></pre>
+<p>the output would be</p>
+<pre><code class="language-bash">$python mtxvec.py data.tsv
+v1 = 1 2 3 5 6 9
+v2 = 1 4 5 7 8 9
+v1.v2 = 188
+</code></pre>
+<p><strong>My Demo:</strong></p>
+<pre><code class="language-r">M &lt;- matrix(1:9, nrow = 3)
 
-v1 <span style="color:#719e07">&lt;-</span> M<span style="color:#268bd2">[upper.tri</span>(M, diag <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)] 
-v2 <span style="color:#719e07">&lt;-</span> M<span style="color:#268bd2">[lower.tri</span>(M, diag <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)]
+v1 &lt;- M[upper.tri(M, diag = T)] 
+v2 &lt;- M[lower.tri(M, diag = T)]
 
-<span style="color:#268bd2">cat</span>(<span style="color:#2aa198">&#34;v1.v2 = &#34;</span>, v1 <span style="color:#719e07">%*%</span> v2)
-</code></pre></div><ul>
+cat(&quot;v1.v2 = &quot;, v1 %*% v2)
+</code></pre>
+<ul>
 <li>DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The <em>genetic code</em> maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a <em>k</em>-letter alphabet.  Write a program called <code>nkwords.py</code> that takes in two integers, <em>k</em> and <em>n</em>, and prints all <em>n</em>-letter words that can be constructed with the first <em>k</em> letters of the alphabet.  For example:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> nkwords.py <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span>
+<pre><code class="language-bash">$python nkwords.py 2 3
 AAA
 AAB
 ABA
@@ -176,26 +183,28 @@ BAA
 BAB
 BBA
 BBB
-</code></pre></div><p>The words don’t need to be printed in any particular order.  Your code should include controls to catch invalidinput.</p>
+</code></pre>
+<p>The words don’t need to be printed in any particular order.  Your code should include controls to catch invalidinput.</p>
 <p><strong>My Demo:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">my.func <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(k,n){
-  vars <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">LETTERS</span>[1<span style="color:#719e07">:</span>k]
+<pre><code class="language-r">my.func &lt;- function(k,n){
+  vars &lt;- LETTERS[1:k]
   
-  m.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">list</span>()
-  <span style="color:#268bd2">for </span>(i in <span style="color:#2aa198">1</span><span style="color:#719e07">:</span>n) {
-    m.list[[i]] <span style="color:#719e07">&lt;-</span> vars
+  m.list &lt;- list()
+  for (i in 1:n) {
+    m.list[[i]] &lt;- vars
   }
-  t <span style="color:#719e07">=</span> <span style="color:#268bd2">expand.grid</span>(m.list)
-  <span style="color:#268bd2">names</span>(t) <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
-  <span style="color:#268bd2">return</span>(t)
+  t = expand.grid(m.list)
+  names(t) &lt;- NULL
+  return(t)
 }
 
-<span style="color:#586e75"># my.func(2,3)</span>
+# my.func(2,3)
 
-<span style="color:#586e75"># args = commandArgs(trailingOnly=TRUE)</span>
+# args = commandArgs(trailingOnly=TRUE)
 
-<span style="color:#586e75"># my.func(args[1], args[2])</span>
-</code></pre></div>
+# my.func(args[1], args[2])
+</code></pre>
+
 		</div>
 
 		<div class="post-tags">

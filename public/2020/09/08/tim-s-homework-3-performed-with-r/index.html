@@ -68,66 +68,70 @@
 <ul>
 <li>Perform 10000 trials in which a coin is tossed until &ldquo;heads-heads&rdquo; occurs, and 10000 trials in which a coin is tossed until &ldquo;heads-tails&rdquo; occurs.</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">coin <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;head&#34;</span>, <span style="color:#2aa198">&#34;tail&#34;</span>)
+<pre><code class="language-r">coin &lt;- c(&quot;head&quot;, &quot;tail&quot;)
 
-<span style="color:#268bd2">sample</span>(coin, <span style="color:#2aa198">2</span>, replace <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)
-</code></pre></div><ul>
+sample(coin, 2, replace = T)
+</code></pre>
+<ul>
 <li>Print the expected number of coin tosses before &ldquo;heads-heads&rdquo; and the expected number of tosses before &ldquo;heads-tails&rdquo;.</li>
 </ul>
 <p><strong>This is a demo of one option:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">x <span style="color:#719e07">=</span> <span style="color:#2aa198">-1</span>
+<pre><code class="language-r">x = -1
   repeat{
-    t <span style="color:#719e07">=</span> <span style="color:#268bd2">sample</span>(coin, <span style="color:#2aa198">2</span>, replace <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)
-    x <span style="color:#719e07">=</span> x <span style="color:#719e07">+</span> <span style="color:#2aa198">1</span>
-    <span style="color:#268bd2">if</span>(<span style="color:#268bd2">all</span>(t <span style="color:#719e07">==</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;head&#34;</span>, <span style="color:#2aa198">&#34;tail&#34;</span>)) <span style="color:#719e07">|</span> <span style="color:#268bd2">all</span>(t <span style="color:#719e07">==</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;tail&#34;</span>, <span style="color:#2aa198">&#34;head&#34;</span>))){ 
-    <span style="color:#586e75"># or for another toss: if(all(t == c(&#34;head&#34;, &#34;head&#34;))){</span>
+    t = sample(coin, 2, replace = T)
+    x = x + 1
+    if(all(t == c(&quot;head&quot;, &quot;tail&quot;)) | all(t == c(&quot;tail&quot;, &quot;head&quot;))){ 
+    # or for another toss: if(all(t == c(&quot;head&quot;, &quot;head&quot;))){
       break
     }
   }
-</code></pre></div><ul>
+</code></pre>
+<ul>
 <li>Create a histogram of the number of tosses before each condition is met.</li>
 </ul>
 <p><strong>This is a demo of one option:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ht <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
-<span style="color:#268bd2">for </span>(i in <span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">10000</span>) {
-  x <span style="color:#719e07">=</span> <span style="color:#2aa198">-1</span>
+<pre><code class="language-r">ht &lt;- NULL
+for (i in 1:10000) {
+  x = -1
   repeat{
-    t <span style="color:#719e07">=</span> <span style="color:#268bd2">sample</span>(coin, <span style="color:#2aa198">2</span>, replace <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)
-    x <span style="color:#719e07">=</span> x <span style="color:#719e07">+</span> <span style="color:#2aa198">1</span>
-    <span style="color:#268bd2">if</span>(<span style="color:#268bd2">all</span>(t <span style="color:#719e07">==</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;head&#34;</span>, <span style="color:#2aa198">&#34;tail&#34;</span>)) <span style="color:#719e07">|</span> <span style="color:#268bd2">all</span>(t <span style="color:#719e07">==</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;tail&#34;</span>, <span style="color:#2aa198">&#34;head&#34;</span>))){ 
-    <span style="color:#586e75"># or for another toss: if(all(t == c(&#34;head&#34;, &#34;head&#34;))){</span>
+    t = sample(coin, 2, replace = T)
+    x = x + 1
+    if(all(t == c(&quot;head&quot;, &quot;tail&quot;)) | all(t == c(&quot;tail&quot;, &quot;head&quot;))){ 
+    # or for another toss: if(all(t == c(&quot;head&quot;, &quot;head&quot;))){
       break
     }
   }
-  ht <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(ht, x)
+  ht &lt;- c(ht, x)
 }
 
-<span style="color:#586e75"># Plot the result (ht, &#34;head tail&#34;; hh, &#34;head head&#34;): </span>
+# Plot the result (ht, &quot;head tail&quot;; hh, &quot;head head&quot;): 
 
-<span style="color:#268bd2">hist</span>(ht, main <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Head tail&#34;</span>, xlab <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Times&#34;</span>)
-<span style="color:#268bd2">hist</span>(hh, main <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Head head&#34;</span>, xlab <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Times&#34;</span>)
-</code></pre></div><p>The visulized results of &ldquo;head tail&rdquo; (left) and &ldquo;head head&rdquo; (right) <img src="hwk3/hw3.fig1.png" alt=""></p>
+hist(ht, main = &quot;Head tail&quot;, xlab = &quot;Times&quot;)
+hist(hh, main = &quot;Head head&quot;, xlab = &quot;Times&quot;)
+</code></pre>
+<p>The visulized results of &ldquo;head tail&rdquo; (left) and &ldquo;head head&rdquo; (right) <img src="hwk3/hw3.fig1.png" alt=""></p>
 <p><strong>I want to compare thses two results and put both histgram in one figure:</strong></p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># As the two histograms would overlap, </span>
-<span style="color:#586e75"># here the color definition helps create two transparent colors</span>
-c1 <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">rgb</span>(<span style="color:#2aa198">173</span>,<span style="color:#2aa198">216</span>,<span style="color:#2aa198">230</span>,max <span style="color:#719e07">=</span> <span style="color:#2aa198">255</span>, alpha <span style="color:#719e07">=</span> <span style="color:#2aa198">90</span>)
-c2 <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">rgb</span>(<span style="color:#2aa198">255</span>,<span style="color:#2aa198">192</span>,<span style="color:#2aa198">203</span>, max <span style="color:#719e07">=</span> <span style="color:#2aa198">255</span>, alpha <span style="color:#719e07">=</span> <span style="color:#2aa198">90</span>)
+<pre><code class="language-r"># As the two histograms would overlap, 
+# here the color definition helps create two transparent colors
+c1 &lt;- rgb(173,216,230,max = 255, alpha = 90)
+c2 &lt;- rgb(255,192,203, max = 255, alpha = 90)
 
-<span style="color:#586e75"># To determine proper breaks of both histograms</span>
-bks <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">pretty</span>(<span style="color:#268bd2">min</span>(<span style="color:#268bd2">c</span>(ht,hh))<span style="color:#719e07">:</span><span style="color:#268bd2">max</span>(<span style="color:#268bd2">c</span>(ht,hh)), 
-             n <span style="color:#719e07">=</span> <span style="color:#2aa198">31</span>)
+# To determine proper breaks of both histograms
+bks &lt;- pretty(min(c(ht,hh)):max(c(ht,hh)), 
+             n = 31)
 
-<span style="color:#586e75"># To get the histgram frequencies</span>
-hg.ht <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">hist</span>(ht, breaks <span style="color:#719e07">=</span> bks, plot <span style="color:#719e07">=</span> <span style="color:#268bd2">F</span>)
-hg.hh <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">hist</span>(hh, breaks <span style="color:#719e07">=</span> bks, plot <span style="color:#719e07">=</span> <span style="color:#268bd2">F</span>)
+# To get the histgram frequencies
+hg.ht &lt;- hist(ht, breaks = bks, plot = F)
+hg.hh &lt;- hist(hh, breaks = bks, plot = F)
 
-<span style="color:#586e75"># Plotting</span>
-<span style="color:#268bd2">plot</span>(hg.ht, col <span style="color:#719e07">=</span> c1, main <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Comparsion&#34;</span>, xlab <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Times&#34;</span>)
-<span style="color:#268bd2">plot</span>(hg.hh, col <span style="color:#719e07">=</span> c2, add <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)
-<span style="color:#268bd2">legend</span>(<span style="color:#2aa198">&#34;topright&#34;</span>, legend<span style="color:#719e07">=</span><span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;head tail&#34;</span>, <span style="color:#2aa198">&#34;head head&#34;</span>),
-       fill<span style="color:#719e07">=</span><span style="color:#268bd2">c</span>(c1, c2),cex<span style="color:#719e07">=</span><span style="color:#2aa198">0.8</span>,
-       box.lty<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>)
-</code></pre></div><p>The &ldquo;comperasion&rdquo; result <img src="hwk3/hw3.fig2.png" alt=""></p>
+# Plotting
+plot(hg.ht, col = c1, main = &quot;Comparsion&quot;, xlab = &quot;Times&quot;)
+plot(hg.hh, col = c2, add = T)
+legend(&quot;topright&quot;, legend=c(&quot;head tail&quot;, &quot;head head&quot;),
+       fill=c(c1, c2),cex=0.8,
+       box.lty=0)
+</code></pre>
+<p>The &ldquo;comperasion&rdquo; result <img src="hwk3/hw3.fig2.png" alt=""></p>
 <p><strong>Simple conclusion:</strong> According to the comparison figure, presumably, the sampling method is unbiased. Even though it is more possible to have a &ldquo;head tail&rdquo; statistically across multiple tosses, that &ldquo;head head&rdquo; pattern shows in the first time of you toss has a dramatically high chance.</p>
 
 		</div>
