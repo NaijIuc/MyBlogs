@@ -8,8 +8,7 @@ categories:
   - Teaching
   
 output: 
-  blogdown::html_page:
-    toc: true
+  blogdown::html_page
 ---
 
 ```{r setup, include=FALSE}
@@ -18,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE)
 ```
 
-##### 1. Obtain the data and read it into a data frame
+## 1. Obtain the data and read it into a data frame
 
 After skimming the file, I have got two strategies to read the file into a data frame.
 
@@ -56,7 +55,7 @@ rm(df.rownames)
 # Checking the data frame 
 head(df[c(1:7)])
 ```
-##### 2. Filter the data
+## 2. Filter the data
 
 remove NAN values
 ```{r, comment= " "}
@@ -116,7 +115,7 @@ var_dc <- The_variance[order(The_variance,decreasing = T)]
 df_sub <- df[rownames(df) %in% names(var_dc[1:1000]),] 
 ```
 
-##### 3. Normalize
+## 3. Normalize
 
 There is a build-in function *scale()* in R able to perform the normalization that each row has zero mean and unit variance.
 
@@ -124,7 +123,7 @@ There is a build-in function *scale()* in R able to perform the normalization th
 df_sub_norm <- t(scale(t(df_sub)))
 ```
 
-##### 4. Perform SVD
+## 4. Perform SVD
 
 There is a build-in function *svd()* in R able to perform the SVD. I used the defualt setting to perform the SVD analysis. The reustls contain:
 

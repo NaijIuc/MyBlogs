@@ -8,15 +8,14 @@ categories:
   - Teaching
   
 output: 
-  blogdown::html_page:
-    toc: true
+  blogdown::html_page
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="obtain-the-data-and-read-it-into-a-data-frame" class="section level5">
-<h5>1. Obtain the data and read it into a data frame</h5>
+<div id="obtain-the-data-and-read-it-into-a-data-frame" class="section level2">
+<h2>1. Obtain the data and read it into a data frame</h2>
 <p>After skimming the file, I have got two strategies to read the file into a data frame.</p>
 <ol style="list-style-type: decimal">
 <li><p>From the file, the none data parts are labeled with “!”, such as below links [1:3], so to get rid of these parts, the remaining are the data requested.</p></li>
@@ -64,8 +63,8 @@ head(df[c(1:7)])</code></pre>
   10004_at        6.0      5.6      5.6     10.3     12.0      7.3     10.9
   10005_at      110.1    106.3    128.7    141.4    128.0    134.3    140.2</code></pre>
 </div>
-<div id="filter-the-data" class="section level5">
-<h5>2. Filter the data</h5>
+<div id="filter-the-data" class="section level2">
+<h2>2. Filter the data</h2>
 <p>remove NAN values</p>
 <pre class="r"><code>dim(df) # row number and column number checking</code></pre>
 <pre><code>  [1] 9335   32</code></pre>
@@ -102,13 +101,13 @@ var_dc &lt;- The_variance[order(The_variance,decreasing = T)]
 # Keep the top 1000 ranked genes
 df_sub &lt;- df[rownames(df) %in% names(var_dc[1:1000]),] </code></pre>
 </div>
-<div id="normalize" class="section level5">
-<h5>3. Normalize</h5>
+<div id="normalize" class="section level2">
+<h2>3. Normalize</h2>
 <p>There is a build-in function <em>scale()</em> in R able to perform the normalization that each row has zero mean and unit variance.</p>
 <pre class="r"><code>df_sub_norm &lt;- t(scale(t(df_sub)))</code></pre>
 </div>
-<div id="perform-svd" class="section level5">
-<h5>4. Perform SVD</h5>
+<div id="perform-svd" class="section level2">
+<h2>4. Perform SVD</h2>
 <p>There is a build-in function <em>svd()</em> in R able to perform the SVD. I used the defualt setting to perform the SVD analysis. The reustls contain:</p>
 <ul>
 <li><p>d, a vector containing the singular values of matrix, sorted decreasingly;</p></li>
