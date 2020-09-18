@@ -1,13 +1,29 @@
 ---
-title: hmwk5
-author: ''
-date: '2020-09-17'
-slug: hmwk5
-categories:
-  - R
-  - Teaching
-tags: []
-output: html_document
+title: 'hmwk5'
+subtitle: ""
+summary: ""
+authors: [jc]
+tags: [R, Pittsburgh, Healthy Ride]
+categories: [R, Pittsburgh, Healthy Ride]
+date: 2020-08-13T13:54:25-04:00
+lastmod: 2020-08-13T13:54:25-04:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
 ---
 
 ```{r setup, include=FALSE}
