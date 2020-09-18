@@ -7,8 +7,7 @@ categories:
   - R
   - Teaching
   
-output: 
-  blogdown::html_page
+output: html_notebook
 ---
 
 ```{r setup, include=FALSE}
