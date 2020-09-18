@@ -18,7 +18,7 @@ output: html_notebook
 <p>After skimming the file, I have got two strategies to read the file into a data frame.</p>
 <ol style="list-style-type: decimal">
 <li><p>From the file, the none data parts are labeled with “!”, such as below links [1:3], so to get rid of these parts, the remaining are the data requested.</p></li>
-<li><p><strong>I used</strong>. Before and after the data part, two sentences are containing <em>“matrix_table_begin/end”</em> (following lines [5:6]). Therefore, I just need to read the information between these two sentences and make it into a data frame.</p></li>
+<li><p><strong>Idea</strong>: Before and after the data part, two sentences are containing <em>“matrix_table_begin/end”</em> (following lines [5:6]). Therefore, I just need to read the information between these two sentences and make it into a data frame.</p></li>
 </ol>
 <pre class="r"><code>df &lt;- readLines(&quot;https://ftp.ncbi.nlm.nih.gov/geo/series/GSE2nnn/GSE2583/suppl/GSE2583_correctly_ordered_Klevecz_GEO_time_series_data.txt&quot;)
 
