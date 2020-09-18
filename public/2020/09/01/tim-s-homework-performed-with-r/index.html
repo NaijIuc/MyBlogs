@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Tim&#39;s homework 2 performed with R - Jian CUI Ph.D.</title><link rel="icon" type="image/png" href=favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Tim&#39;s homework 2 performed with R" />
+<meta property="og:description" content="In Gödel, Escher, Bach: An Eternal Golden Braid, Douglas Hofstadter describes a property of integers:   We begin with your number, and if it is ODD, we triple it and add 1. If it is EVEN, we take half of it. Then we repeat the process. Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.
+ Write a Python script called wondrous." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2020/09/01/tim-s-homework-performed-with-r/" />
+<meta property="article:published_time" content="2020-09-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tim&#39;s homework 2 performed with R"/>
+<meta name="twitter:description" content="In Gödel, Escher, Bach: An Eternal Golden Braid, Douglas Hofstadter describes a property of integers:   We begin with your number, and if it is ODD, we triple it and add 1. If it is EVEN, we take half of it. Then we repeat the process. Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.
+ Write a Python script called wondrous."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><link rel="stylesheet" type="text/css" href="/css/dark.css"  />
+
+	<script src="/js/feather.min.js"></script>
+	
+	<script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="/">
+	<h1 class="site-title"><a href="/">Jian CUI Ph.D.</a></h1>
+	<div class="site-description"><h2>Postdoctoral associate @ <a href="https://upddi.pitt.edu/">Drug Discovery Institute - University of Pittsburgh</a></h2><nav class="nav social">
+			<ul class="flat"><a href="mailto:cuij@pitt.edu" title="Email"><i data-feather="mail"></i></a><a href="https://github.com/NaijIuc" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/jian-cui-61ab121b0/" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Tim&#39;s homework 2 performed with R</h1>
+			<div class="meta">Posted at &mdash; Sep 1, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<ul>
+<li>In <em>Gödel, Escher, Bach: An Eternal Golden Braid</em>, Douglas Hofstadter describes a property of integers:</li>
+</ul>
+<blockquote>
+<p>We begin with your number, and if it is ODD, we triple it and add 1.  If it is EVEN, we take half of it.  Then we repeat the process.  Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.</p>
+</blockquote>
+<p>Write a Python script called <code>wondrous.py</code> that reads a positive integer from the command line and calculateswhether it’s wondrous.  If it is, the program tells the number of steps needed to reach 1. It should have thefollowing behavior:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python wondrous.py <span style="color:#2aa198">15</span>
+
+<span style="color:#2aa198">15</span> is wondrous.  It converges in <span style="color:#2aa198">17</span> steps.
+
+<span style="color:#268bd2">$python</span> wondrous.py bacon
+
+‘bacon’ is not an integer.
+</code></pre></div><p>What happens if the program is given an UNwondrous number?</p>
+<p><strong>My demo:</strong></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">wonder.func <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
+  wonder.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>()
+  w <span style="color:#719e07">&lt;-</span> x
+  <span style="color:#268bd2">while </span>(w <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">1</span>) {
+    m.fuc <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
+      y <span style="color:#719e07">=</span> <span style="color:#cb4b16">NULL</span>
+      <span style="color:#268bd2">ifelse</span>(x <span style="color:#719e07">%%</span> <span style="color:#2aa198">2</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">1</span>, y <span style="color:#719e07">&lt;-</span> x<span style="color:#719e07">*</span><span style="color:#2aa198">3+1</span>, y <span style="color:#719e07">&lt;-</span> x<span style="color:#719e07">/</span><span style="color:#2aa198">2</span>)
+      <span style="color:#268bd2">return</span>(y)
+    }
+    
+    wonder.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(wonder.list, w)
+    w <span style="color:#719e07">=</span> <span style="color:#268bd2">m.fuc</span>(w)
+  }
+  
+  <span style="color:#268bd2">cat</span>(<span style="color:#2aa198">&#34;&#34;</span>,x, <span style="color:#2aa198">&#34;is wondrous. \n&#34;</span> ,
+      <span style="color:#2aa198">&#34;It converges in&#34;</span>, <span style="color:#268bd2">length</span>(wonder.list), <span style="color:#2aa198">&#34;steps\n&#34;</span>,
+      <span style="color:#2aa198">&#34;content = &#34;</span>, wonder.list,<span style="color:#2aa198">1</span>)
+}
+</code></pre></div><ul>
+<li>Analternating permutationof the set{1,2,3, . . . N}is a permutation in which each element is alternativelygreater than or less than the previous element.  That is, ifn1is the first element,n2the second, etc., theneither</li>
+</ul>
+<p>n1&gt; n2&lt; n3&gt; n4&lt; n5. . .</p>
+<p>or</p>
+<p>n1&lt; n2&gt; n3&lt; n4&gt; n5. . .</p>
+<p>Write a program called <code>zigzag.py</code> that determines the probability that a random permutation of the integers1 throughNwill be alternating.  It should return the number of alternating permutations, the total numberof permutations, and their ratio:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> zigzag.py <span style="color:#2aa198">3</span>
+<span style="color:#2aa198">4</span> <span style="color:#2aa198">6</span> 0.666667
+
+<span style="color:#268bd2">$python</span> zigzag.py 3.7
+3.7 is not an integer.
+</code></pre></div><p><strong>My Demo:</strong></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># This method looks for all the possibilities, which takes too much memory</span>
+
+zigzag <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(x){
+
+  <span style="color:#268bd2">library</span>(e1071)
+  
+  all <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">permutations</span>(x)
+  
+  a <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span><span style="color:#719e07">:</span>(x<span style="color:#2aa198">-1</span>)
+  b <span style="color:#719e07">=</span> <span style="color:#2aa198">2</span><span style="color:#719e07">:</span>x
+
+  t <span style="color:#719e07">=</span> all[,b] <span style="color:#719e07">-</span> all[,a]
+  
+  t[t<span style="color:#719e07">&lt;=</span><span style="color:#2aa198">-1</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">-1</span>
+  t[t<span style="color:#719e07">&gt;=</span><span style="color:#2aa198">1</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>
+  
+  a <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">seq</span>(<span style="color:#2aa198">0</span>,x<span style="color:#2aa198">-1</span>,<span style="color:#2aa198">2</span>)[<span style="color:#2aa198">-1</span>]
+  b <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">seq</span>(<span style="color:#2aa198">1</span>,x<span style="color:#2aa198">-1</span>,<span style="color:#2aa198">2</span>)
+  
+  seq.1 <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
+  seq.1[a] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">1</span>
+  seq.1[b] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">-1</span>
+  
+  seq.2 <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
+  seq.2[a] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">-1</span>
+  seq.2[b] <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">1</span>
+  
+  f <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">sum</span>(<span style="color:#268bd2">apply</span>(t, <span style="color:#2aa198">1</span>, <span style="color:#268bd2">function</span>(x) <span style="color:#268bd2">all</span>(x <span style="color:#719e07">==</span> seq.1))<span style="color:#719e07">+</span>
+        <span style="color:#268bd2">apply</span>(t, <span style="color:#2aa198">1</span>, <span style="color:#268bd2">function</span>(x) <span style="color:#268bd2">all</span>(x <span style="color:#719e07">==</span> seq.2)))
+  
+  <span style="color:#268bd2">cat</span>(f ,<span style="color:#2aa198">&#34;\t&#34;</span>, <span style="color:#268bd2">factorial</span>(x), <span style="color:#2aa198">&#34;\t&#34;</span>, <span style="color:#268bd2">round</span>(f<span style="color:#719e07">/</span><span style="color:#268bd2">factorial</span>(x),<span style="color:#2aa198">6</span>))
+  
+  
+}
+</code></pre></div><ul>
+<li>Write a program called <code>mtxvec.py</code> that reads an N×Nmatrix from a tab-delimited file, places the elements of its upper triangle into the vector~v1,  the elements of its lower triangle into the vector~v2,  and calculatestheir dot product.  For example, if the input matrix is</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$cat</span> data.tsv
+<span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> 
+<span style="color:#2aa198">4</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">6</span> 
+<span style="color:#2aa198">7</span> <span style="color:#2aa198">8</span> <span style="color:#2aa198">9</span>
+</code></pre></div><p>the output would be</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> mtxvec.py data.tsv
+<span style="color:#268bd2">v1</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span> <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">6</span> <span style="color:#2aa198">9</span>
+<span style="color:#268bd2">v2</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span> <span style="color:#2aa198">4</span> <span style="color:#2aa198">5</span> <span style="color:#2aa198">7</span> <span style="color:#2aa198">8</span> <span style="color:#2aa198">9</span>
+v1.v2 <span style="color:#719e07">=</span> <span style="color:#2aa198">188</span>
+</code></pre></div><p><strong>My Demo:</strong></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">M <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">matrix</span>(<span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">9</span>, nrow <span style="color:#719e07">=</span> <span style="color:#2aa198">3</span>)
+
+v1 <span style="color:#719e07">&lt;-</span> M<span style="color:#268bd2">[upper.tri</span>(M, diag <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)] 
+v2 <span style="color:#719e07">&lt;-</span> M<span style="color:#268bd2">[lower.tri</span>(M, diag <span style="color:#719e07">=</span> <span style="color:#268bd2">T</span>)]
+
+<span style="color:#268bd2">cat</span>(<span style="color:#2aa198">&#34;v1.v2 = &#34;</span>, v1 <span style="color:#719e07">%*%</span> v2)
+</code></pre></div><ul>
+<li>DNA uses four different nucleobases, abbreviated as A, C, T, and G, to code protein amino acid sequences.The <em>genetic code</em> maps  codons  –  nucleobase  triplets  –  to  amino  acids.   For  example,  the  nucleobase  triplet CAT is  a  codon  for  the  amino  acid  histidine.   There  are  $4^3=  64$  codons,  or  three-letter  words  that  can  be constructed from a four-letter alphabet.  In general, there are $k^n$n-letter words that can be constructed from a <em>k</em>-letter alphabet.  Write a program called <code>nkwords.py</code> that takes in two integers, <em>k</em> and <em>n</em>, and prints all <em>n</em>-letter words that can be constructed with the first <em>k</em> letters of the alphabet.  For example:</li>
+</ul>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#268bd2">$python</span> nkwords.py <span style="color:#2aa198">2</span> <span style="color:#2aa198">3</span>
+AAA
+AAB
+ABA
+ABB
+BAA
+BAB
+BBA
+BBB
+</code></pre></div><p>The words don’t need to be printed in any particular order.  Your code should include controls to catch invalidinput.</p>
+<p><strong>My Demo:</strong></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">my.func <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(k,n){
+  vars <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">LETTERS</span>[1<span style="color:#719e07">:</span>k]
+  
+  m.list <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">list</span>()
+  <span style="color:#268bd2">for </span>(i in <span style="color:#2aa198">1</span><span style="color:#719e07">:</span>n) {
+    m.list[[i]] <span style="color:#719e07">&lt;-</span> vars
+  }
+  t <span style="color:#719e07">=</span> <span style="color:#268bd2">expand.grid</span>(m.list)
+  <span style="color:#268bd2">names</span>(t) <span style="color:#719e07">&lt;-</span> <span style="color:#cb4b16">NULL</span>
+  <span style="color:#268bd2">return</span>(t)
+}
+
+<span style="color:#586e75"># my.func(2,3)</span>
+
+<span style="color:#586e75"># args = commandArgs(trailingOnly=TRUE)</span>
+
+<span style="color:#586e75"># my.func(args[1], args[2])</span>
+</code></pre></div>
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> Copyright © by Jian Cui |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

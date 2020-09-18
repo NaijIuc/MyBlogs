@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jian CUI Ph.D.</title>
-    <link>/</link>
-    <description>Recent content on Jian CUI Ph.D.</description>
+    <title>Posts on Jian CUI Ph.D.</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Jian CUI Ph.D.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © by Jian Cui</copyright>
     <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -62,16 +62,6 @@ if you are interested in the project, please click this link</description>
       <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
 Introduction Advances:   Very well maintained communities and detailed manuals.
   The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
-      
-      <guid>/about/</guid>
-      <description>I am an aspiring data scientist who enjoys connecting the dots: be it ideas from multiple biological disciplines, people from different teams, or applications from different platforms. I have strong technical skills and an academic background in systems biology, molecular biology, statistics, and data science.
-My passion lies in solving biological problems with tailored data and algorithms and communicating complex ideas to non-technical stakeholders. I am able to jump across verticals to deliver high-performing solutions.</description>
     </item>
     
   </channel>
