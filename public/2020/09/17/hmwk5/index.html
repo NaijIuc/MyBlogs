@@ -161,7 +161,7 @@ dim(df) </code></pre>
 The_coef &lt;- apply(df, 1, function(x) sqrt(var(x))/mean(x))</code></pre>
 <p>The ploting results showing like figure 1.</p>
 <div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-4-1.png" alt="The histogram of standard deviations (A) and coefficient of variation (B)." width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-4-1.png" alt="The histogram of standard deviations (A) and coefficient of variation (B)." width="672" />
 <p class="caption">
 Figure 1: The histogram of standard deviations (A) and coefficient of variation (B).
 </p>
@@ -171,7 +171,7 @@ Figure 1: The histogram of standard deviations (A) and coefficient of variation 
 <p><span class="math display">\[c_{v}=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(\frac{x_{i}}{\overline{x}}-1)^2}\]</span></p>
 <p>That is to say, the dispersion of obtaining value depends on the ration of measurement value and <em>mean</em> value, which illustrates that the noise is relevant to the absolute measurement value. 500 samples have been randomly chosen to show the relationship among <em>mean, variance</em> and <em>CV</em>. It is obvious to see, with the increase of <em>mean</em> and <em>variance</em> value, the <em>CV</em> value performs a dropping trend. figure 2.</p>
 <div class="figure"><span id="fig:unnamed-chunk-5"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-5-1.png" alt="The relationship among mean (A), variance (B), and CV (C). With the increases of the former two values, CV has an obvious dropping trend." width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-5-1.png" alt="The relationship among mean (A), variance (B), and CV (C). With the increases of the former two values, CV has an obvious dropping trend." width="672" />
 <p class="caption">
 Figure 2: The relationship among mean (A), variance (B), and CV (C). With the increases of the former two values, CV has an obvious dropping trend.
 </p>
@@ -240,7 +240,7 @@ sapply(SVD, function(x) head(x,3))</code></pre>
   [3,] -0.05738003  0.06841796  0.14776190  0.37323728</code></pre>
 <p>Plot the dispersion of the singular values (figure 3).</p>
 <div class="figure"><span id="fig:unnamed-chunk-9"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-9-1.png" alt="The dispersion of singular values" width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-9-1.png" alt="The dispersion of singular values" width="672" />
 <p class="caption">
 Figure 3: The dispersion of singular values
 </p>
@@ -254,21 +254,21 @@ which(cumpro &gt; 0.8)</code></pre>
 <pre><code>##  [1]  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
 ## [26] 29 30 31 32</code></pre>
 <div class="figure"><span id="fig:unnamed-chunk-11"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-11-1.png" alt="The plot of the squares of the singular values (A), the plot eigenvalues of the covariance matix (B), and the cumulative variance plot(C)" width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-11-1.png" alt="The plot of the squares of the singular values (A), the plot eigenvalues of the covariance matix (B), and the cumulative variance plot(C)" width="672" />
 <p class="caption">
 Figure 4: The plot of the squares of the singular values (A), the plot eigenvalues of the covariance matix (B), and the cumulative variance plot(C)
 </p>
 </div>
 <p>Project the data onto the first 3 principal components.(figure 5)</p>
 <div class="figure"><span id="fig:unnamed-chunk-12"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-12-1.png" alt="Data distribution on the first 3 principal components, {v(1),v(2)} (A), {v(2),v(3)} (B), {v(1),v(3)} (C), as well as the highlited genes." width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-12-1.png" alt="Data distribution on the first 3 principal components, {v(1),v(2)} (A), {v(2),v(3)} (B), {v(1),v(3)} (C), as well as the highlited genes." width="672" />
 <p class="caption">
 Figure 5: Data distribution on the first 3 principal components, {v(1),v(2)} (A), {v(2),v(3)} (B), {v(1),v(3)} (C), as well as the highlited genes.
 </p>
 </div>
 <p>Pick a gene with high projection onto the first three principal components. Plot its expression across data sets (figure 6).</p>
 <div class="figure"><span id="fig:unnamed-chunk-13"></span>
-<img src="/post/123/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-13-1.png" alt="The genes with highest projection in the first three principal component" width="672" />
+<img src="/post/Tim-s-homework-5/2020-09-17-hmwk5_files/figure-html/unnamed-chunk-13-1.png" alt="The genes with highest projection in the first three principal component" width="672" />
 <p class="caption">
 Figure 6: The genes with highest projection in the first three principal component
 </p>
