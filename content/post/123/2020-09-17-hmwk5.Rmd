@@ -8,7 +8,8 @@ categories:
   - Teaching
   
 output: 
-  html_document
+  blogdown::html_page:
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -143,7 +144,7 @@ sapply(SVD, function(x) head(x,3))
 
 Plot the dispersion of the singular values (figure 3).
 
-```{r,echo=FALSE,fig.cap="The dispersion of singular values",fig.height=5}
+```{r,echo=FALSE,fig.cap="The dispersion of singular values"}
 plot(SVD$d, xlab = expression(i), ylab = expression(S[i]), main = "Dispersion of the singular values")
 ```
 
@@ -175,7 +176,7 @@ legend("topleft", legend=c("Cut-off @ PC4"),
 
 Project the data onto the first 3 principal components.(figure 5)
 
-```{r,echo=F, comment=FALSE,message=FALSE,fig.cap="Data distribution on the first 3 principal components, {v(1),v(2)} (A), {v(2),v(3)} (B), {v(1),v(3)} (C), as well as the highlited genes.",fig.height=6.5}
+```{r,echo=F, comment=FALSE,message=FALSE,fig.cap="Data distribution on the first 3 principal components, {v(1),v(2)} (A), {v(2),v(3)} (B), {v(1),v(3)} (C), as well as the highlited genes."}
 pc_for_plot <- as.data.frame(wdbc.pr$x)
 
 library(ggplot2)
